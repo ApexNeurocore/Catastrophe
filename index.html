@@ -13,6 +13,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Dancing+Script:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <!-- ═══════════════════════════════════════════════════════════════
+         📊 OPTIONAL WEB ANALYTICS TRACKER (GOOGLE ANALYTICS 4)
+         ═══════════════════════════════════════════════════════════════
+         To track how many people visit, time spent, device models, 
+         locations & screen resolutions ethically for GitHub Pages:
+         1. Create a free account at https://analytics.google.com
+         2. Create a "Web Data Stream" with your GitHub Pages URL
+         3. Replace 'G-XXXXXXXXXX' below with your Measurement ID
+         4. Remove the <!-- and --> comment tags around the scripts below:
+    -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        cookie_flags: 'SameSite=None;Secure',
+        anonymize_ip: true
+      });
+    </script>
+    -->
+
     <style>
         /* ═══════════════════════════════════════════════════════════════
            🎨  THEMES & DESIGN SYSTEM (ALL IN PURE CSS)
@@ -283,185 +306,658 @@
             z-index: 1;
         }
 
-        /* ─── Top Floating Controls (Theme Bar & Lock Button) ─── */
+        /* ─── Pristine Top Sanctuary Header (Zero Clutter, No Irritating Options) ─── */
         .top-action-bar {
             position: fixed;
-            top: 16px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 18px;
+            right: 22px;
+            left: auto;
+            transform: none;
             z-index: 900;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            transition: var(--transition-smooth);
+            box-sizing: border-box;
+        }
+
+        .settings-nav-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-pill);
+            padding: 8px 16px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.84rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+            transition: all 0.35s ease;
+            white-space: nowrap;
+            user-select: none;
+        }
+        .settings-nav-btn:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            background: var(--bg-card-hover);
+            box-shadow: 0 12px 32px var(--accent-glow);
+            transform: translateY(-1px);
+        }
+        .settings-nav-btn .gear-icon {
+            font-size: 0.96rem;
+            display: inline-block;
+            transition: transform 0.5s ease;
+        }
+        .settings-nav-btn:hover .gear-icon {
+            transform: rotate(60deg);
+        }
+        .settings-nav-btn.active-view {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            background: var(--tag-bg);
+            box-shadow: 0 0 16px var(--accent-glow);
+            font-weight: 600;
+        }
+
+        /* ─── Sanctuary Main Navigation Tabs (Chapters vs Settings) ─── */
+        .sanctuary-nav-tabs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 12px;
-            padding: 6px 14px;
+            margin: 2rem auto 2.5rem;
+            max-width: 440px;
+            padding: 6px;
             background: var(--bg-card);
             border: 1px solid var(--border-primary);
             border-radius: var(--radius-pill);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             transition: var(--transition-smooth);
-            max-width: min(96vw, 1080px);
-            width: max-content;
-            box-sizing: border-box;
-            flex-wrap: nowrap;
         }
-        .top-action-bar:hover {
+        .sanctuary-nav-tabs:hover {
             border-color: var(--border-primary-bright);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.38);
         }
-
-        /* Left Group: Theme Selector */
-        .top-bar-left {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            min-width: 0;
-            flex: 1 1 auto;
-            overflow: hidden;
-        }
-
-        .theme-selector-label {
-            font-family: var(--font-ui);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding-right: 4px;
-            user-select: none;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-
-        .theme-buttons-container {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            scroll-behavior: smooth;
-            white-space: nowrap;
-            min-width: 0;
-            padding: 2px 2px;
-            -webkit-overflow-scrolling: touch;
-        }
-        .theme-buttons-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .theme-btn {
+        .sanctuary-main-tab {
+            flex: 1;
             background: transparent;
             border: 1px solid transparent;
             border-radius: var(--radius-pill);
-            padding: 5px 10px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            cursor: pointer;
-            font-family: var(--font-ui);
-            font-size: 0.8rem;
+            padding: 9px 18px;
             color: var(--text-muted);
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
             transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-            white-space: nowrap;
-            flex-shrink: 0;
             user-select: none;
+            white-space: nowrap;
         }
-        .theme-btn:hover {
+        .sanctuary-main-tab:hover {
             color: var(--text-main);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--border-primary);
+            background: rgba(255, 255, 255, 0.04);
         }
-        .theme-btn.active {
+        .sanctuary-main-tab.active {
             color: var(--text-main);
             background: var(--tag-bg);
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 14px var(--accent-glow);
+            border-color: var(--border-primary-bright);
+            box-shadow: 0 4px 18px var(--accent-glow);
             font-weight: 600;
         }
-        .theme-swatch {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 6px currentColor;
-            flex-shrink: 0;
+        .sanctuary-main-tab .tab-icon {
+            font-size: 1rem;
+        }
+        .sanctuary-main-tab .tab-counter {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1px 7px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            line-height: 1.3;
+        }
+        .sanctuary-main-tab.active .tab-counter {
+            background: var(--accent-gold);
+            color: var(--bg-deep);
         }
 
-        /* Elegant Vertical Divider */
-        .top-bar-divider {
-            width: 1px;
-            height: 22px;
-            background: var(--border-primary);
-            opacity: 0.65;
-            flex-shrink: 0;
-            margin: 0 2px;
+        /* ─── Dedicated Settings Tab Section (In-Page) ─── */
+        .settings-tab-section {
+            max-width: 820px;
+            margin: 0 auto 5rem;
+            padding: 0 24px;
+            animation: fadeInTab 0.4s ease;
+        }
+        .settings-container-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 28px;
+            padding: 36px 38px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), 0 0 50px var(--accent-glow);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            transition: var(--transition-theme);
+        }
+        .settings-header-banner {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.6rem;
+            border-bottom: 1px solid var(--border-primary);
+        }
+        .settings-header-banner .banner-spark {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.3rem;
+            letter-spacing: 2px;
+        }
+        .settings-header-banner h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+            margin: 0 0 0.4rem;
+        }
+        .settings-header-banner p {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin: 0;
         }
 
-        /* Right Group: Cozy Mode & Lock Buttons */
-        .top-bar-right {
+        /* Settings Card Internal Tabs (Sub-Navigation) */
+        .settings-subnav-bar {
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-primary);
+            margin-bottom: 24px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+        .settings-subnav-btn {
+            background: transparent;
+            border: none;
+            border-bottom: 2.5px solid transparent;
+            padding: 8px 16px 12px;
+            color: var(--text-muted);
+            font-family: var(--font-ui);
+            font-size: 0.88rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        .settings-subnav-btn:hover {
+            color: var(--text-main);
+        }
+        .settings-subnav-btn.active {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Settings Option Rows & Interactive Controls */
+        .setting-group-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border-primary);
+            border-radius: 20px;
+            padding: 22px 24px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: var(--transition-smooth);
+        }
+        .setting-group-card:hover {
+            border-color: var(--border-primary-bright);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        .setting-group-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            letter-spacing: 0.3px;
+        }
+        .setting-group-card-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin: -6px 0 6px;
+        }
+
+        .setting-item-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .setting-item-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .setting-item-text {
+            flex: 1;
+        }
+        .setting-item-label {
+            font-family: var(--font-ui);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
             display: flex;
             align-items: center;
             gap: 8px;
+            margin-bottom: 4px;
+        }
+        .setting-item-desc {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+        .setting-item-action {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             flex-shrink: 0;
         }
 
-        .cozy-nav-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-primary);
-            border-radius: var(--radius-pill);
-            padding: 5px 12px;
-            color: var(--text-muted);
-            font-family: var(--font-ui);
-            font-size: 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+        /* Custom Sanctuary Toggle Switch */
+        .sanctuary-switch {
+            position: relative;
+            display: inline-block;
+            width: 52px;
+            height: 28px;
             cursor: pointer;
-            transition: all 0.3s;
-            white-space: nowrap;
-            flex-shrink: 0;
             user-select: none;
         }
-        .cozy-nav-btn:hover {
-            color: var(--accent-gold);
-            border-color: var(--accent-gold);
-            background: var(--tag-bg);
+        .sanctuary-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            position: absolute;
         }
-        .cozy-nav-btn.active {
-            color: #fff;
+        .switch-slider {
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid var(--border-primary);
+            border-radius: 28px;
+            transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .switch-slider::before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background: var(--text-main);
+            border-radius: 50%;
+            transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+        .sanctuary-switch input:checked + .switch-slider {
             background: var(--accent-gold);
             border-color: var(--accent-gold);
             box-shadow: 0 0 14px var(--accent-glow);
+        }
+        .sanctuary-switch input:checked + .switch-slider::before {
+            transform: translateX(24px);
+            background: var(--bg-deep);
+        }
+        .switch-badge {
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
             font-weight: 600;
+            min-width: 44px;
+            color: var(--text-warm);
         }
 
-        .lock-nav-btn {
+        /* Danger Action Button (Lock) */
+        .btn-lock-sanctuary {
+            background: linear-gradient(135deg, rgba(230, 168, 178, 0.25), rgba(190, 93, 114, 0.35));
+            border: 1.5px solid var(--accent-rose);
+            color: var(--text-main);
+            border-radius: var(--radius-pill);
+            padding: 9px 20px;
+            font-family: var(--font-ui);
+            font-size: 0.86rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        .btn-lock-sanctuary:hover {
+            background: var(--accent-rose);
+            color: var(--bg-deep);
+            box-shadow: 0 6px 20px rgba(230, 168, 178, 0.35);
+            transform: translateY(-1px);
+        }
+        .btn-back-to-stories {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-primary);
             border-radius: var(--radius-pill);
-            padding: 5px 12px;
+            padding: 10px 22px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.88rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        .btn-back-to-stories:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: var(--tag-bg);
+            box-shadow: 0 0 14px var(--accent-glow);
+        }
+
+        /* ─── Soothing Settings Drawer & Dialog Modal ─── */
+        .settings-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 7, 14, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+            padding: 16px;
+        }
+        .settings-modal-backdrop.open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .settings-modal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary-bright);
+            border-radius: 24px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 0 0 60px var(--accent-glow);
+            max-width: 620px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            transform: scale(0.96) translateY(10px);
+            transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .settings-modal-backdrop.open .settings-modal-card {
+            transform: scale(1) translateY(0);
+        }
+        .settings-modal-header {
+            padding: 20px 24px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-primary);
+        }
+        .settings-modal-title {
+            font-family: var(--font-heading);
+            font-size: 1.45rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        .settings-close-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-primary);
+            color: var(--text-muted);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        .settings-close-btn:hover {
+            color: var(--text-main);
+            background: var(--tag-bg);
+            border-color: var(--accent-gold);
+            transform: scale(1.08);
+        }
+
+        /* Settings Tabs Navigation */
+        .settings-tabs-nav {
+            display: flex;
+            gap: 8px;
+            padding: 12px 24px 0;
+            border-bottom: 1px solid var(--border-primary);
+            background: rgba(0, 0, 0, 0.15);
+        }
+        .settings-tab-btn {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            padding: 8px 14px 10px;
             color: var(--text-muted);
             font-family: var(--font-ui);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+        }
+        .settings-tab-btn:hover {
+            color: var(--text-main);
+        }
+        .settings-tab-btn.active {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .settings-tab-content-area {
+            padding: 22px 24px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        .settings-tab-panel {
+            display: none;
+        }
+        .settings-tab-panel.active {
+            display: block;
+            animation: fadeInTab 0.3s ease;
+        }
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Theme Grid in Settings */
+        .themes-settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .theme-card-option {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1.5px solid var(--border-primary);
+            border-radius: 14px;
+            padding: 12px 10px;
+            text-align: center;
             cursor: pointer;
-            transition: all 0.3s;
-            white-space: nowrap;
-            flex-shrink: 0;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
             user-select: none;
         }
-        .lock-nav-btn:hover {
-            color: var(--accent-rose);
-            border-color: var(--accent-rose);
-            background: rgba(230, 168, 178, 0.12);
+        .theme-card-option:hover {
+            border-color: var(--border-primary-bright);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+        .theme-card-option.active {
+            border-color: var(--accent-gold);
+            background: var(--tag-bg);
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+        .theme-card-preview-swatch {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+        }
+        .theme-card-name {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Encryptor Tool UI in Settings */
+        .encrypt-tool-section {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .encrypt-tool-instruction {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            background: rgba(218, 185, 126, 0.08);
+            border-left: 3px solid var(--accent-gold);
+            padding: 10px 14px;
+            border-radius: 0 10px 10px 0;
+            margin: 0;
+        }
+        .tool-field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .tool-field-label {
+            font-family: var(--font-ui);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-warm);
+            font-weight: 600;
+        }
+        .tool-input-text, .tool-textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 10px 14px;
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+        .tool-textarea {
+            min-height: 120px;
+            resize: vertical;
+            line-height: 1.5;
+        }
+        .tool-input-text:focus, .tool-textarea:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 14px var(--accent-glow);
+        }
+        .tool-action-btn-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .tool-btn-primary {
+            background: linear-gradient(135deg, rgba(218, 185, 126, 0.35), rgba(230, 168, 178, 0.3));
+            border: 1.5px solid var(--border-primary-bright);
+            border-radius: var(--radius-pill);
+            padding: 9px 20px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tool-btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px var(--accent-glow);
+            border-color: var(--accent-gold);
+        }
+        .tool-output-box {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            max-height: 160px;
+            overflow-y: auto;
+            word-break: break-all;
+            user-select: all;
+            display: none;
+        }
+        .tool-output-box.show {
+            display: block;
+        }
+        .tool-copy-badge {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            color: #82caa3;
+            margin-left: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tool-copy-badge.show {
+            opacity: 1;
         }
 
         /* Light Mode Specific Harmonizations */
@@ -481,21 +977,39 @@
         [data-theme="light"] .password-input-wrapper input::placeholder {
             color: rgba(110, 97, 87, 0.55);
         }
-        [data-theme="light"] .top-action-bar {
-            background: rgba(255, 255, 255, 0.85);
+        [data-theme="light"] .settings-modal-card,
+        [data-theme="light"] .settings-container-card,
+        [data-theme="light"] .setting-group-card {
+            background: rgba(255, 255, 255, 0.94);
+            border-color: rgba(184, 134, 54, 0.28);
             box-shadow: 0 10px 30px rgba(135, 110, 85, 0.14);
         }
-        [data-theme="light"] .cozy-nav-btn,
-        [data-theme="light"] .lock-nav-btn {
-            background: rgba(255, 255, 255, 0.7);
+        [data-theme="light"] .sanctuary-nav-tabs {
+            background: rgba(255, 255, 255, 0.92);
+            border-color: rgba(184, 134, 54, 0.25);
+            box-shadow: 0 8px 25px rgba(135, 110, 85, 0.12);
         }
-        [data-theme="light"] .theme-btn.active {
-            background: rgba(179, 128, 50, 0.15);
+        [data-theme="light"] .tool-input-text, [data-theme="light"] .tool-textarea, [data-theme="light"] .tool-output-box {
+            background: rgba(255, 255, 255, 0.88);
             color: #2b221d;
         }
-        [data-theme="light"] .theme-btn:hover {
-            background: rgba(179, 128, 50, 0.08);
-            color: #2b221d;
+        [data-theme="light"] .settings-nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 24px rgba(135, 110, 85, 0.14);
+        }
+        [data-theme="light"] .switch-slider {
+            background: rgba(110, 97, 87, 0.18);
+            border-color: rgba(184, 134, 54, 0.35);
+        }
+        [data-theme="light"] .sanctuary-switch input:checked + .switch-slider {
+            background: #b38032;
+            border-color: #b38032;
+        }
+        [data-theme="light"] .sanctuary-switch input:checked + .switch-slider::before {
+            background: #ffffff;
+        }
+        [data-theme="light"] .setting-item-row {
+            border-bottom-color: rgba(184, 134, 54, 0.14);
         }
         [data-theme="light"] .hero-stat {
             background: rgba(255, 255, 255, 0.65);
@@ -1572,28 +2086,38 @@
 
         @media (max-width: 768px) {
             .top-action-bar {
-                top: 10px;
-                padding: 4px 8px;
-                gap: 6px;
-                width: calc(100vw - 16px);
-                max-width: calc(100vw - 16px);
+                top: 12px;
+                right: 14px;
             }
-            .theme-selector-label {
-                display: none;
+            .settings-nav-btn {
+                padding: 7px 13px;
+                font-size: 0.8rem;
             }
-            .theme-btn span.theme-name {
-                display: none;
+            .sanctuary-nav-tabs {
+                margin: 1.4rem 12px 2rem;
+                max-width: none;
             }
-            .theme-btn {
-                padding: 5px 7px;
+            .sanctuary-main-tab {
+                padding: 8px 14px;
+                font-size: 0.84rem;
             }
-            .top-bar-divider {
-                height: 18px;
-                margin: 0 1px;
+            .settings-tab-section {
+                padding: 0 12px;
             }
-            .cozy-nav-btn, .lock-nav-btn {
-                padding: 5px 9px;
-                font-size: 0.78rem;
+            .settings-container-card {
+                padding: 24px 18px 28px;
+                border-radius: 22px;
+            }
+            .setting-item-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .setting-item-action {
+                align-self: flex-end;
+            }
+            .themes-settings-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             .story-card {
                 padding: 2rem 1.6rem 1.8rem;
@@ -1620,25 +2144,19 @@
         }
 
         @media (max-width: 480px) {
-            .cozy-btn-text, .lock-btn-text {
-                display: none;
+            .settings-header-banner h2 {
+                font-size: 1.6rem;
             }
-            .cozy-nav-btn, .lock-nav-btn {
-                padding: 5px;
-                width: 32px;
-                height: 32px;
-                border-radius: 50%;
-                justify-content: center;
-                gap: 0;
-            }
-            .top-bar-right {
-                gap: 4px;
+            .sanctuary-main-tab {
+                padding: 7px 10px;
+                font-size: 0.8rem;
+                gap: 5px;
             }
             .hero {
-                padding-top: 80px;
+                padding-top: 75px;
             }
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.4rem;
             }
             .password-input-group {
                 padding: 4px 6px 4px 14px;
@@ -1691,60 +2209,178 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
-         🎨  TOP ACTION BAR — THEME SELECTOR & LOCK BUTTON
+    <!-- ═══════════════════════════════════════════════════════════════
+         🕊️  CLEAN TOP SANCTUARY HEADER (NO IRRITATING OPTIONS)
          ═══════════════════════════════════════════════════════════════ -->
     <header class="top-action-bar" id="top-action-bar" style="display: none;">
-        <!-- Left Section: Themes -->
-        <div class="top-bar-left">
-            <span class="theme-selector-label">✦ Themes</span>
-            <div class="theme-buttons-container" id="theme-buttons-container">
-                <!-- 7 Themes (One-click switch) -->
-                <button class="theme-btn active" data-theme-id="midnight" title="Midnight Romance">
-                    <span class="theme-swatch" style="color: #dab97e; background: #dab97e;"></span>
-                    <span class="theme-name">Midnight</span>
-                </button>
-                <button class="theme-btn" data-theme-id="light" title="Sunlit Romance (Light Mode)">
-                    <span class="theme-swatch" style="color: #b38032; background: #fffdfa; border: 1.5px solid #b38032;"></span>
-                    <span class="theme-name">Light</span>
-                </button>
-                <button class="theme-btn" data-theme-id="sakura" title="Sakura Twilight">
-                    <span class="theme-swatch" style="color: #f09bb0; background: #f09bb0;"></span>
-                    <span class="theme-name">Sakura</span>
-                </button>
-                <button class="theme-btn" data-theme-id="emerald" title="Emerald Whisper">
-                    <span class="theme-swatch" style="color: #82caa3; background: #82caa3;"></span>
-                    <span class="theme-name">Emerald</span>
-                </button>
-                <button class="theme-btn" data-theme-id="lavender" title="Lavender Serenity">
-                    <span class="theme-swatch" style="color: #b79ae6; background: #b79ae6;"></span>
-                    <span class="theme-name">Lavender</span>
-                </button>
-                <button class="theme-btn" data-theme-id="sunset" title="Warm Sunset Glow">
-                    <span class="theme-swatch" style="color: #f29f74; background: #f29f74;"></span>
-                    <span class="theme-name">Sunset</span>
-                </button>
-                <button class="theme-btn" data-theme-id="celestial" title="Celestial Cashmere">
-                    <span class="theme-swatch" style="color: #c0ceea; background: #c0ceea;"></span>
-                    <span class="theme-name">Celestial</span>
-                </button>
+        <button class="settings-nav-btn" id="settings-nav-btn" title="Open Sanctuary Settings">
+            <span class="gear-icon">⚙️</span>
+            <span class="settings-btn-text">Settings</span>
+        </button>
+    </header>
+
+    <!-- ─── Calming Settings & Encryptor Modal ─── -->
+    <div id="settings-modal" class="settings-modal-backdrop" onclick="closeSettingsModal()">
+        <div class="settings-modal-card" onclick="event.stopPropagation()">
+            <div class="settings-modal-header">
+                <h3 class="settings-modal-title"><span>✦</span> <span>Sanctuary Settings</span></h3>
+                <button class="settings-close-btn" onclick="closeSettingsModal()" aria-label="Close Settings">✕</button>
+            </div>
+
+            <!-- Settings Tabs Navigation -->
+            <div class="settings-tabs-nav">
+                <button class="settings-tab-btn active" data-tab="themes-tab" onclick="switchSettingsTab('themes-tab')">🎨 Appearance & Cozy</button>
+                <button class="settings-tab-btn" data-tab="encryptor-tab" onclick="switchSettingsTab('encryptor-tab')">🔐 Add Chapter</button>
+                <button class="settings-tab-btn" data-tab="password-tab" onclick="switchSettingsTab('password-tab')">🔑 Master Password</button>
+                <button class="settings-tab-btn" data-tab="lock-tab" onclick="switchSettingsTab('lock-tab')">🔒 Lock</button>
+            </div>
+
+            <div class="settings-tab-content-area">
+                <!-- Tab 1: Themes & Reading Ambiance (Includes Cozy Mode) -->
+                <div id="themes-tab" class="settings-tab-panel active">
+                    <p style="margin: 0 0 12px; font-family: var(--font-body); font-size: 1.1rem; color: var(--text-muted); font-style: italic;">
+                        Choose your ambient mood. One click changes everything instantly:
+                    </p>
+                    <div class="themes-settings-grid">
+                        <div class="theme-card-option active" data-theme-id="midnight" onclick="applyTheme('midnight')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #dab97e, #121029);"></div>
+                            <span class="theme-card-name">Midnight</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="light" onclick="applyTheme('light')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #b38032, #fcf9f2); border: 1.5px solid #b38032;"></div>
+                            <span class="theme-card-name">Sunlit (Light)</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="sakura" onclick="applyTheme('sakura')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #f09bb0, #241126);"></div>
+                            <span class="theme-card-name">Sakura</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="emerald" onclick="applyTheme('emerald')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #82caa3, #10241d);"></div>
+                            <span class="theme-card-name">Emerald</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="lavender" onclick="applyTheme('lavender')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #b79ae6, #1d1733);"></div>
+                            <span class="theme-card-name">Lavender</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="sunset" onclick="applyTheme('sunset')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #f29f74, #2b1511);"></div>
+                            <span class="theme-card-name">Sunset</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="celestial" onclick="applyTheme('celestial')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #c0ceea, #171b26);"></div>
+                            <span class="theme-card-name">Celestial</span>
+                        </div>
+                    </div>
+
+                    <!-- Ambient Options Stored in Settings -->
+                    <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 14px;">
+                        <div class="setting-item-row">
+                            <div class="setting-item-text">
+                                <div class="setting-item-label"><span>🕯️</span> Cozy Focus Reading Mode</div>
+                                <div class="setting-item-desc">Softly spotlights the story in view while gently dimming others for an intimate reading experience.</div>
+                            </div>
+                            <div class="setting-item-action">
+                                <span class="switch-badge" id="modal-cozy-state-label">Off</span>
+                                <label class="sanctuary-switch" for="modal-cozy-mode-toggle">
+                                    <input type="checkbox" id="modal-cozy-mode-toggle" onchange="toggleCozyMode(this.checked)">
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting-item-row">
+                            <div class="setting-item-text">
+                                <div class="setting-item-label"><span>📏</span> Golden Timeline Progress Bar</div>
+                                <div class="setting-item-desc">Luminous reading progress line at the very top of your screen.</div>
+                            </div>
+                            <div class="setting-item-action">
+                                <span class="switch-badge" id="modal-progress-state-label">On</span>
+                                <label class="sanctuary-switch" for="modal-progress-bar-toggle">
+                                    <input type="checkbox" id="modal-progress-bar-toggle" checked onchange="toggleReadingProgress(this.checked)">
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting-item-row">
+                            <div class="setting-item-text">
+                                <div class="setting-item-label"><span>✨</span> Ambient Stars & Glowing Aurora</div>
+                                <div class="setting-item-desc">Twinkling background starlight particles and soothing breathing aurora.</div>
+                            </div>
+                            <div class="setting-item-action">
+                                <span class="switch-badge" id="modal-ambient-state-label">On</span>
+                                <label class="sanctuary-switch" for="modal-ambient-effects-toggle">
+                                    <input type="checkbox" id="modal-ambient-effects-toggle" checked onchange="toggleAmbientEffects(this.checked)">
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Encryptor Tool (Write in plain text -> Encrypt) -->
+                <div id="encryptor-tab" class="settings-tab-panel">
+                    <div class="encrypt-tool-section">
+                        <p class="encrypt-tool-instruction">
+                            Write your new chapter in normal Hindi or English text. When you click <strong>"Encrypt & Add to Diary"</strong>, it will automatically append it to your live diary and generate the encrypted code to paste into <code>index.html</code>.
+                        </p>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">Memory Date</label>
+                            <input type="text" id="new-story-date" class="tool-input-text" placeholder="e.g. 10 November, 2026">
+                        </div>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">Chapter Title</label>
+                            <input type="text" id="new-story-title" class="tool-input-text" placeholder="e.g. Unexpected Meet ✨">
+                        </div>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">Memory Content</label>
+                            <textarea id="new-story-content" class="tool-textarea" placeholder="Write your memory here... You can use emojis, line breaks, [image: URL | caption], or [audio: URL | title]"></textarea>
+                        </div>
+                        <div class="tool-action-btn-row">
+                            <button class="tool-btn-primary" onclick="encryptAndAddNewStory()">
+                                <span>🔒 Encrypt & Copy Payload</span>
+                            </button>
+                            <span id="copy-badge" class="tool-copy-badge">✓ Copied to clipboard!</span>
+                        </div>
+                        <pre id="tool-output-code" class="tool-output-box"></pre>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Change Master Password -->
+                <div id="password-tab" class="settings-tab-panel">
+                    <div class="encrypt-tool-section">
+                        <p class="encrypt-tool-instruction">
+                            To change your master password, enter your new secret key below. It will re-encrypt your entire diary with the new key and copy the updated code block for <code>index.html</code>.
+                        </p>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">New Master Secret Key (Letters, Numbers, Emojis)</label>
+                            <input type="text" id="new-master-password" class="tool-input-text" placeholder="Enter new secret key...">
+                        </div>
+                        <div class="tool-action-btn-row">
+                            <button class="tool-btn-primary" onclick="changeMasterPassword()">
+                                <span>🔑 Re-Encrypt Diary with New Password</span>
+                            </button>
+                            <span id="pw-copy-badge" class="tool-copy-badge">✓ Copied to clipboard!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Lock Sanctuary -->
+                <div id="lock-tab" class="settings-tab-panel">
+                    <div class="encrypt-tool-section">
+                        <p class="encrypt-tool-instruction">
+                            Lock your private journal immediately. You will need to re-enter your secret key to view your chapters again.
+                        </p>
+                        <div style="margin-top: 10px;">
+                            <button class="btn-lock-sanctuary" onclick="lockJournal()">
+                                <span>🔒 Lock Sanctuary Journal Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Vertical Separator Divider -->
-        <div class="top-bar-divider" aria-hidden="true"></div>
-
-        <!-- Right Section: Actions (Cozy Focus Mode & Lock) -->
-        <div class="top-bar-right">
-            <button class="cozy-nav-btn" id="cozy-nav-btn" title="Toggle Cozy Focus Reading Mode">
-                <span class="cozy-icon">🕯️</span>
-                <span class="cozy-btn-text">Cozy Mode</span>
-            </button>
-            <button class="lock-nav-btn" id="lock-nav-btn" title="Lock Journal">
-                <span class="lock-icon">🔒</span>
-                <span class="lock-btn-text">Lock</span>
-            </button>
-        </div>
-    </header>
+    </div>
 
     <!-- ═══════════════════════════════════════════════════════════════
          🔒  GLORIOUS & SANCTUARY PASSWORD INTERFACE
@@ -1832,6 +2468,20 @@
             </div>
         </header>
 
+        <!-- ─── Sanctuary Navigation Tabs (Chapters vs Settings) ─── -->
+        <nav class="sanctuary-nav-tabs" id="sanctuary-nav-tabs" aria-label="Sanctuary Views">
+            <button class="sanctuary-main-tab active" id="tab-nav-stories" onclick="switchSanctuaryView('stories')">
+                <span class="tab-icon">📖</span>
+                <span class="tab-label">Our Chapters</span>
+                <span class="tab-counter" id="tab-stories-count">0</span>
+            </button>
+            <button class="sanctuary-main-tab" id="tab-nav-settings" onclick="switchSanctuaryView('settings')">
+                <span class="tab-icon">⚙️</span>
+                <span class="tab-label">Settings</span>
+                <span class="tab-counter" style="background: rgba(218, 185, 126, 0.2);">✦</span>
+            </button>
+        </nav>
+
         <!-- ─── Stories Section ─── -->
         <section class="stories-section" id="stories-section">
             <div class="stories-section-header">
@@ -1841,6 +2491,184 @@
             <div class="timeline-line"></div>
             <div id="stories-container">
                 <!-- Story cards will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ─── Dedicated Settings Tab Section (In-Page View) ─── -->
+        <section class="settings-tab-section" id="settings-tab-section" style="display: none;">
+            <div class="settings-container-card">
+                <div class="settings-header-banner">
+                    <div class="banner-spark">✦ ⚙️ ✦</div>
+                    <h2>Sanctuary Settings & Preferences</h2>
+                    <p>Customize your reading ambiance, color themes, cozy mode, and private security in one place.</p>
+                </div>
+
+                <!-- Settings Sub-Navigation -->
+                <div class="settings-subnav-bar">
+                    <button class="settings-subnav-btn active" data-subtab="inpage-themes" onclick="switchInpageSettingsSubtab('inpage-themes')">
+                        <span>🎨</span> Appearance & Cozy Mode
+                    </button>
+                    <button class="settings-subnav-btn" data-subtab="inpage-encryptor" onclick="switchInpageSettingsSubtab('inpage-encryptor')">
+                        <span>✍️</span> Add & Encrypt Chapter
+                    </button>
+                    <button class="settings-subnav-btn" data-subtab="inpage-password" onclick="switchInpageSettingsSubtab('inpage-password')">
+                        <span>🔑</span> Master Password
+                    </button>
+                    <button class="settings-subnav-btn" data-subtab="inpage-security" onclick="switchInpageSettingsSubtab('inpage-security')">
+                        <span>🔒</span> Privacy & Lock
+                    </button>
+                </div>
+
+                <!-- Subtab 1: Themes & Cozy Reading Mode -->
+                <div id="inpage-themes" class="inpage-settings-panel active">
+                    <div class="setting-group-card">
+                        <h3 class="setting-group-card-title"><span>🎨</span> Ambient Color Themes</h3>
+                        <p class="setting-group-card-subtitle">One click changes your entire aesthetic, lighting, and palette instantly:</p>
+                        
+                        <div class="themes-settings-grid">
+                            <div class="theme-card-option active" data-theme-id="midnight" onclick="applyTheme('midnight')">
+                                <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #dab97e, #121029);"></div>
+                                <span class="theme-card-name">Midnight</span>
+                            </div>
+                            <div class="theme-card-option" data-theme-id="light" onclick="applyTheme('light')">
+                                <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #b38032, #fcf9f2); border: 1.5px solid #b38032;"></div>
+                                <span class="theme-card-name">Sunlit (Light)</span>
+                            </div>
+                            <div class="theme-card-option" data-theme-id="sakura" onclick="applyTheme('sakura')">
+                                <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #f09bb0, #241126);"></div>
+                                <span class="theme-card-name">Sakura</span>
+                            </div>
+                            <div class="theme-card-option" data-theme-id="emerald" onclick="applyTheme('emerald')">
+                                <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #82caa3, #10241d);"></div>
+                                <span class="theme-card-name">Emerald</span>
+                            </div>
+                            <div class="theme-card-option" data-theme-id="lavender" onclick="applyTheme('lavender')">
+                                <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #b79ae6, #1d1733);"></div>
+                                <span class="theme-card-name">Lavender</span>
+                            </div>
+                            <div class="theme-card-option" data-theme-id="sunset" onclick="applyTheme('sunset')">
+                                <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #f29f74, #2b1511);"></div>
+                                <span class="theme-card-name">Sunset</span>
+                            </div>
+                            <div class="theme-card-option" data-theme-id="celestial" onclick="applyTheme('celestial')">
+                                <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #c0ceea, #171b26);"></div>
+                                <span class="theme-card-name">Celestial</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-group-card">
+                        <h3 class="setting-group-card-title"><span>🕯️</span> Reading Ambiance & Experience</h3>
+                        
+                        <div class="setting-item-row">
+                            <div class="setting-item-text">
+                                <div class="setting-item-label"><span>🕯️</span> Cozy Focus Reading Mode</div>
+                                <div class="setting-item-desc">Subtly highlights and illuminates the story card currently centered in your view while gently dimming others for an intimate, calm reading experience.</div>
+                            </div>
+                            <div class="setting-item-action">
+                                <span class="switch-badge" id="cozy-state-label">Off</span>
+                                <label class="sanctuary-switch" for="cozy-mode-toggle">
+                                    <input type="checkbox" id="cozy-mode-toggle" onchange="toggleCozyMode(this.checked)">
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting-item-row">
+                            <div class="setting-item-text">
+                                <div class="setting-item-label"><span>📏</span> Golden Timeline Progress Bar</div>
+                                <div class="setting-item-desc">A glowing, ethereal line at the top of the window tracking your journey through the memories.</div>
+                            </div>
+                            <div class="setting-item-action">
+                                <span class="switch-badge" id="progress-state-label">On</span>
+                                <label class="sanctuary-switch" for="progress-bar-toggle">
+                                    <input type="checkbox" id="progress-bar-toggle" checked onchange="toggleReadingProgress(this.checked)">
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting-item-row">
+                            <div class="setting-item-text">
+                                <div class="setting-item-label"><span>✨</span> Ambient Twinkling Stars & Breathing Aurora</div>
+                                <div class="setting-item-desc">Floating starlight particles and soothing background color breathing aura.</div>
+                            </div>
+                            <div class="setting-item-action">
+                                <span class="switch-badge" id="ambient-state-label">On</span>
+                                <label class="sanctuary-switch" for="ambient-effects-toggle">
+                                    <input type="checkbox" id="ambient-effects-toggle" checked onchange="toggleAmbientEffects(this.checked)">
+                                    <span class="switch-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subtab 2: Add & Encrypt Chapter -->
+                <div id="inpage-encryptor" class="inpage-settings-panel" style="display: none;">
+                    <div class="setting-group-card">
+                        <h3 class="setting-group-card-title"><span>✍️</span> Write & Encrypt New Memory</h3>
+                        <p class="setting-group-card-subtitle">Write in plain text. Click encrypt to immediately preview and copy the secure military-grade AES-256 payload.</p>
+                        
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">Memory Date</label>
+                            <input type="text" id="inpage-new-story-date" class="tool-input-text" placeholder="e.g. 10 November, 2026">
+                        </div>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">Chapter Title</label>
+                            <input type="text" id="inpage-new-story-title" class="tool-input-text" placeholder="e.g. Under the Stars ✨">
+                        </div>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">Memory Content</label>
+                            <textarea id="inpage-new-story-content" class="tool-textarea" placeholder="Write your memory here... You can use emojis, line breaks, [image: URL | caption], or [audio: URL | title]"></textarea>
+                        </div>
+                        <div class="tool-action-btn-row">
+                            <button class="tool-btn-primary" onclick="encryptAndAddNewStoryInpage()">
+                                <span>🔒 Encrypt & Add to Diary</span>
+                            </button>
+                            <span id="inpage-copy-badge" class="tool-copy-badge">✓ Copied to clipboard!</span>
+                        </div>
+                        <pre id="inpage-tool-output-code" class="tool-output-box"></pre>
+                    </div>
+                </div>
+
+                <!-- Subtab 3: Change Master Password -->
+                <div id="inpage-password" class="inpage-settings-panel" style="display: none;">
+                    <div class="setting-group-card">
+                        <h3 class="setting-group-card-title"><span>🔑</span> Change Master Secret Key</h3>
+                        <p class="setting-group-card-subtitle">Enter your new secret key. All your chapters will be re-encrypted and the payload will be prepared for permanent storage.</p>
+                        
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">New Master Secret Key</label>
+                            <input type="text" id="inpage-new-master-password" class="tool-input-text" placeholder="Enter new secret key...">
+                        </div>
+                        <div class="tool-action-btn-row">
+                            <button class="tool-btn-primary" onclick="changeMasterPasswordInpage()">
+                                <span>🔑 Re-Encrypt With New Key</span>
+                            </button>
+                            <span id="inpage-pw-copy-badge" class="tool-copy-badge">✓ Copied to clipboard!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subtab 4: Privacy & Lock -->
+                <div id="inpage-security" class="inpage-settings-panel" style="display: none;">
+                    <div class="setting-group-card">
+                        <h3 class="setting-group-card-title"><span>🔒</span> Lock Sanctuary Journal</h3>
+                        <p class="setting-group-card-subtitle">Lock your diary instantly. Anyone viewing will need your secret key to see any chapters.</p>
+                        <div style="margin-top: 10px;">
+                            <button class="btn-lock-sanctuary" onclick="lockJournal()">
+                                <span>🔒 Lock Sanctuary Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn-back-to-stories" onclick="switchSanctuaryView('stories')">
+                        <span>← Back to Our Chapters</span>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -1866,154 +2694,139 @@
     <button id="back-to-top" aria-label="Back to top">↑</button>
 
     <script>
-        /* ═══════════════════════════════════════════════════════════════
-           📍 PLACE 1: SET YOUR PASSWORD HERE
-           ═══════════════════════════════════════════════════════════════
-           
-           Change the text between the quotation marks " " below.
-           You can use:
-           • English letters (a-z, A-Z)
-           • Numbers (0-9)
-           • Any Emojis (❤️‍🩹, 🧿, ✨, 🌸, etc.)
-           • Spaces or special symbols
-           
-           Example:
-           const YOUR_PASSWORD = "Pragya ❤️‍🩹";
-        */
-        const YOUR_PASSWORD = "Pragya ❤️‍🩹"; // ← CHANGE YOUR PASSWORD HERE
 
+        /* ═══════════════════════════════════════════════════════════════
+           📍 ENCRYPTED STORIES PAYLOAD (MILITARY-GRADE AES-GCM)
+           ═══════════════════════════════════════════════════════════════
+           Your entire diary is 100% mathematically encrypted.
+           Even if someone downloads this file or inspects the page,
+           they only see encrypted ciphertext that cannot be cracked.
+        */
+        const ENCRYPTED_STORIES_PAYLOAD = {
+  "v": 1,
+  "s": "CZojgzCxcQqi+GvJaYyllg==",
+  "iv": "KPEqsBO8En/CvEDF",
+  "ct": "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"
+};
+
+        /* In-memory decrypted stories (populated when correct password is entered) */
+        let loveStories = [];
+        let CURRENT_SESSION_KEY = "";
 
         /* ═══════════════════════════════════════════════════════════════
            📍 PLACE 2: SET YOUR SITE TITLES & FOOTER HERE
            ═══════════════════════════════════════════════════════════════ */
-        const HERO_TITLE = "Our Love Story"; // ← Main big title
-        const HERO_SUBTITLE = "Every moment with you is worth remembering"; // ← Subtitle under the title
-        const FOOTER_TEXT = "To be continued… forever and always"; // ← Footer message at the bottom
-
-
-        /* ═══════════════════════════════════════════════════════════════
-           📍 PLACE 3: YOUR JOURNAL ENTRIES (ADD OR EDIT HERE)
-           ═══════════════════════════════════════════════════════════════
-           
-           HOW TO ADD A NEW STORY:
-           1. Copy this block:
-           
-              {
-                  date: "Your Date Here",
-                  title: "Your Chapter Title",
-                  content: `Your diary words go here...
-              You can write across multiple lines.`,
-              },
-
-           2. Paste it before the closing bracket ];
-
-           ✦ HOW TO ADD IMAGES INSIDE YOUR STORY TEXT:
-             Simply write this inside your story text wherever you want the picture:
-             [image: https://your-link.com/photo.jpg | Optional Caption Here]
-             (Or if you store photos in a folder: [image: images/photo.jpg | Caption])
-
-           ✦ HOW TO ADD AUDIO / MUSIC INSIDE YOUR STORY TEXT:
-             Simply write this inside your story text wherever you want the player:
-             [audio: https://your-link.com/song.mp3 | Song Title or Voice Note]
-             (Or if you store audio in a folder: [audio: music/song.mp3 | Our Song 🎵])
-
-           3. Save index.html and push to GitHub!
-        */
-        const loveStories = [{
-            date: "17 February, 2026",
-            title: "1st Board Exam",
-            content: `ALL THANKS TO THOSE MISCHIEVOUS CLASSMATES OF MINE, WHO MADE IT POSSIBLE FOR ME TO ARRIVE AND LEAVE THE EXAM CENTRE ON MY OWN AND NOT FROM ANY SCHOOL BUS!
-My class 10th boards had started. I was genuinely clueless that at the time when all students stress for exams, my stress would be for anything else. 
-
-17th Feb, My first exam was maths, we arrived from bus,  nothing special. I gave exam, Exam took mine 💀. 
-`,
-        }, {
-            date: "21 February, 2026",
-            title: "Pahli Nazar 🧿",
-            content: `21st Feb, Second exam, English. Same bus took us to exam centre again, but this time, when i was chilling out with my friends outside the centre, suddenly I saw a face. A familiar Face, I took some time to process,andddddd itwas my old classmate and only female bestfriend of my life (class 3rd and 4th). She also saw me, Meri fatt gyi. Female interaction for me is just impossible. The last girl I ever talked to, was her ❤️. I withdrew my eyes out of nervousness without waving a "Hi". Now, my eyes started looking for her everywhere. I dont fucking know what I was feeling, and what was happening to me suddenly but yeah! We went inside the examination centre. My eyes just glued to her. She was sitting with her friends at the other side (Girls Section), and I sat in the boys section. She was also looking at me from a distance. Maybe we were understanding what was going on inside ourselves at that time, because this was an unexpected meet after roughly 6 to 7 years of absolutely no contact. Then everything went normal, we wrote our papers and came back home. But I did not know that this simple thing will go such far. I knew she will treat me like a random guy, I was no special.I literally did not expected what was going to happen next day.
-`,
-        }, {
-            date: "25 February, 2026",
-            title: "First Impression",
-            content: `25th February, Third Exam (Science), My school management said that due to the intolerable activities of some students, the bus will only take those students to exam centre who pay for it (old customers lol). If this would not have been happened, my life would have taken a completely different turn. Honestly I had forgot about her, after all she had not shown any interest in me that day. I saw her, she was probably discussing something with her friends about today's exam (ofc). We again wrote our exams and nothing much happened except those "Noticing Each Other" types. Paper dene ke baad me exam centre se nikla, aur apne doston ke saath jaane laga, wo mere aage aage chal rahi thi (coincidentally). I had observing her from the very back when we were walking, she was definitely looking for someone. When I reached closer to her she saw me and then immediately turned forward, she started telling her friends and pointed towards me with her eyes. I know something happened at that time. She did this THRICE. Par mujhe yakeen tha ki: Koi tumse pyaar kyu karega? So, I just did what I used to do. Just went to the other side with my frnds and she took the other way. Maybe she waited for me because she started feeling for me first ✨ But jab tak mai aaya wo chali gayi thi as I was busy with some of my Motherfucker Friends. 
-`,
-        }, {
-            date: "27 February, 2026",
-            title: "Initial Efforts",
-            content: `27th February: My fourth Exam (IT). I reached the centre, saw her sitting with her friends in the ground at the other side (girls area). She was staring at me. I stared at her. We wrote our papers, left the centre. Again that staring session started. In the last paper, nothing serious had happened. Although it was *EXTREMELY ABNORMAL* for me, no girl had ever looked at me that way, or did any if the things that she did. But wo mud mud kar dekhti rahi. I was dead serious, no expressions at all (cuz mujhe pta hi nahi tha kya karu). At the trisection, she continued walking towards the left road (ghar ki taraf ka rasta) while i headed towards my friends (right side). I thought it was nothing as serious. But she waited, which i did not expect. Mai bakchodi karke waha se nikla, and saw her standing there and talking with her friends. I told gaywa (he knew less initially but i told him more and more about her with time). Mujhe dekhte hi wo chalne lagi aage aage. I was literally confused, I could not believe my eyes. Bhai ye achanak se kya ho raha haiiii!!?!?, aur jo wo baar baar tirchhi nazar se mudkar dekh rahi thi wo to .... 💀💀💀💀💀. I did not have the courage to look towards her, it was gaywa who kept telling me when she turned to look for me. My condition was getting critical asf. Little did I realised that she had started to like me. Fir mai tez tez chalkar uske bagal tak pahuncha aur fir usse aage nikal gaya. I halted at a shop to buy some snacks, us dukaan se khade hokar use dekhne laga. I thought she would come this was but she took the other way, at the santoshi mata temple, with her friends and went home by an e rickshaw. AB suno: mai gaywa ke saath rickshaw me baith gaya, mai uske baare me hi soch raha tha, then suddenly I saw her going inside the street just besides the MLK PG college's main gate. I obviously recognised her from the back.She still thinks that i live at the "CITY PALACE HOUSE", yaani meri nani ka ghar. Thats why she was going there warna uske ghar ka to waha koi ata pata nahi tha. she lived in sisai. Also, gaywa was confused ki mai konsi ladki ke baare me baat kar raha hu he thought uske saath jo ladki chal rahi hai wohi hai meri wali. Usne bataya mai jaanta hu "Rashi" ko. I said Rashi?? Who Is she?? Mujhe laga uske ghar ka naam Rashi hoga. Gaywa ne bataya uske papa army me the aur death ho gyi. BC mujhe laga shaadi se pahle mera sasur nipat gaya 😭. (Btw salute to him). Par baad me agle din pata chala it was not her. I was Relieved. 
-`,
-        }, {
-            date: "2 March, 2026",
-            title: "Expression Of Love",
-            content: `2nd March (Fifth Examination): Aaj mera hindi ki exam tha. Speaking honestly,I was not worried a bit about my exams. my true anxiety was something else 🫪.All I though of was her.She left a lasting impression on me. When I arrived at the centre, I roamed around with Gaywa (main goal: finding her!), but last me pata hai kya hua!! Mere saamne ek Maruti Suzuki Swift Dzire (discontinued model 2017 - 2020) Grey color- UP32------- ( I was unable to see the whole registration plate) aakar rukti hai. She sat quietly inside her car and watched me while I lost consciousness lol. Paper ka time hua tab ham andar gaye. We assembled for the prayer (her school line was separate) although we saw each other. Paper achha hua, bahar aane ke baad. Mere dimaag completely confused tha, pata nhi wo sirf curious hai ya sach me pasand karti hai or she is just makung fun out of me with her friend. Mujhe to sach me yahi lagta tha ki mai lifetime single rahne ke liye hi bana hu. I leaved the centre thinking all of this. Baaki madarchodon (doston) ko peeche chhodte hue, gaywa ke saath aage aaya. Mai bahut zyada, LITERALLY BAHUT ZAYADA RESTLESS THA. I was just looking Out for her. I scanned all possible pathways. I even returned 2 times to see if she was behind but she was nowhere to be found. Jab wo kahi nahi mili,i had no words."SHE WAS JUST MAKING FUN OF ME AND I FUCKING FELL FOR IT, IT WAS NOTHING AS SERIOUS AS I THOUGHT",Gaywa constantly reassured me that she will be somewhere wating for me, and then........... as i walked further . ............ at the turn, badi wali pani tanki ke neeche, She was waiting. She did not go away. I WAS FILLED WITH JOY. Bhai ab sach me thoda thoda lagne laga tha ki kuchh ho raha hai pakka. Mai uske bagal se nikla, my heartbeat skyrocketed cuz jaise hi mai aage nikla she started walking behind me again, like she was literally waiting for me!!. atp I literally thought someone injected a super serum into my brain, My brain started analyzing all 14 million possibilities in all multiverses. I could not believe in my own existence 🤯🤯🤯🤯. We walked for some distance and i stopped again at the same shop as the last time, expecting that she will go the same way as prevoius but, she didn't. She took the other path. sirf ek dost ke saath usi raste per paidal hi chalne lagi jis raste Se Main bhi jane wala tha.I bought soft drinks and began to walk behind her. (I could not convince my brain that it was happening to me lol). Jaisi Meri nazar uspar pdti hai, Maine dekha ki wo peeche mujhe hi dhoondh rahi thi. Mai peeche chal raha tha. I kept walikg past her, aur wo repeatedly mud mud kar dekh rhi thi. Jitni baar wo mudti utni baar my heart skipped a beat FR. Gaywa lagtaar kah raha tha bhai kuchh karo bhai kuchh karo bhai--- kuchh karo lekin aaj bhi is baat ka regret hai yaar. Mai chutiya tha ekdam. Ek baar dekh kar dhang se smile bhi nahi de paya. Chalte chalte fir she took a rickshaw at veer vinay chowk. Waha par 10000% confirmation ho gya. When she sat in the auto, she peeked behind and gave me a long stare. Peeche coincidence maan sakta hoon but last wala was deadly for sure. 
-YOU EXPRESSED YOUR LOVE THROUGH YOUR EYES THAT DAY`,
-        }, {
-            date: "7 March, 2026",
-            title: "Closest Approach",
-            content: `7 March (Last Exam): Aaj ke din dil me extreme level ka dar, excitement, fomo sab tha. Aaj last day tha, agar aaj kuchh nahi kiya to lifetime regret hona tha. Centre par pahucha and wo thoda late se aayi. Ham school ke gate ke just baahr khade the. Mai  Apne friends circle main khada tha vah apne friend circle mein khadi Thi. Then we locked in the hardest eye contact of our lives. Fir paper wagerah hone ke baad bahar nikle. And what happened was totally unexpected. I could not find her anywhere. Mai baar baar reverse aaya check karne, dobara aage gaya pani tanki pe ki shayad waha mil jaye par nahi mili. My soul was once again filled with sadness. Bahut bura laga. Gaywa wahi kahta raha ruk mai dhundhta hu etc etc. I kept walking with my eyes facing downwards. Gaywa suddenly shouted: WO HAIIIIIIIIIIIIIII. Then I saw her waiting at a shop at the road intersection at Highway. Same thing happened today too, saath saath chalte chalte ham, kabhi wo aage kabhi mai aage. After gaywa filled me with some courage I also began to turn back and lookout for her just for her to be assured that I am aware of what is going on. Fir ham vv chowrahe tak pahuche. Then it hit me, ki kahi wo firse chali na jaye, so I instantly ran and crossed the road to signal her to come forward. Thank god, wo waha par ruki thi auto ke liye, but mujhe aage jaate hue dekh kar wo bhi mere piche piche aane lagi. When she was crossing, she was facing difficulties I noticed, I thought I should help but my introvert ass froze my body. Aage ham jab Ambedkar tirahe par pahuche, to mujhe laga - ki kahin wo ye Na soche ki Main andar jaunga, kyunki Mera Ghar City palace per hai. and maybe she would go there, but main Sahi time par usse aage nikal gaya.  and thennnn......., we walked all the way from st. Xaviers to mlk college. Approx 5kms and that too on our foots.It felt nothing walking 5kms 🙃. I tried so many times to talk but i couldnt. Now we reached mlk pg college. I am a person who fears about these things a lot, so to just get a final assurance i decided to take a final test to get  1,000,000% confirmation (I was a coward asf), I crossed the road and went to a nearby shop. Mere road cross karte hu wo bhi road ke ussi side aa gyi, but she went for the other shop. Gaywa fueled me up - "Go get me chewing gums". I asked for all the strength that mightly lords could offer. I went to the shop at which she was standing. Mai uske just peeche khada tha. She wore a beautiful perfume that day. She did not notice my presence until I asked the shopkeeper for cf. Then, suddenly out of excitement she held her frnd's hand tightly and maybe started to jump. She was excited asf. Mai confirm to ho gaya but ab karu kya. then came someone on a bike and asked her to hop on and he'll drop her home. she refused. Like literally! Mai to bada khush hua, lekin fir 2 min baad rickshaw me baith kar chali gayi. The only words I could say was "Laude Lag Gaye" twice. I was broken completely. Went home. Uske baad mai use bhool nhi paya
-`,
-        },{
-            date: "Post Exam Condition🤒",
-            title: "Secretly Depressed",
-            content: `After 7th of March there wasn't a day when i didn't think of her.Whenever i went out, i just hoped for a girl who wore specs and had a beautiful natural blush on her cheeks! Pahle sochta tha ki balrampur kitna hi bada hai, mil hi jayegi kahi na kahi.But there was no track of her for months. I was dying out of restlessness.One day Gaywa told me that he saw her in the bijlipur temple, but I Assumed it was largely fake. There was one last hope.... Second board ka jab form bhara tha ❤️. Is bar Main kafi himmat juta chuka tha ki is bar opportunity miss nahin hone dunga. I was waiting For 15th May. Bahut sare doubts the dimag mein, sab kuchh clear Ho Gaya examination ke din. 
-`,
-        },{
-            date: "15 May, 2026",
-            title: "The Second Chance",
-            content: `15 May: First 2nd board exam (Maths). Main usi purane centre pahuncha, nostalgia peaked there. Maine pahle Se Hi gaywa ko bol Rakha tha, ki jaldi a Jana aur mere sath rahana pure time. But he was a pure asshole, he came late and went away earlier (He should never be forgiven for this sin!). Yani ki Main akele lauta. anyway,I was roaming around, meeting my old classmates. Then gaywa arrived.I kept waiting dor too long,but she was nowhere to be found. Mujhe yakin ho gaya tha ki I could not do anything except regret all my life. But Achanak se us bheed mein, I saw a face. It was HER..... ❤️. I was excited asf. I mustered up all the courage. Slowly penetrating the intense traffic, she came near and stood infront of me. Ham center ke andar ghuse, exam Diya aur fir bahar aa gaye. Jab mai bahar nikla to wo bhi apni classroom ke bahar khadi hui thi, mujhe dekhte hi aage badh gayi. We followed as always. But uske baad wo apni friends ke saath rickshaw me baith kar chali gayi. Like literally, no eye-contact nothing. She just sat and went away like it was nothing. I was deeply saddened, I knew I have no more than few minutes in total, over 2 fucking days. Usme se bhi wo pahle din chali gayi. I went zombie for few minutes, i could not speak, could not think, and could not feel anything (except the extreme sunlight lol) Gaywa had already gone with his father, I was walking towards home with Aditya. He was accompanying me in the opposite direction, he had to go the other way. I walked some distance with him so that he does not feel bad. And then I haulted rickshaw for him, and he went away too. I walked for a while but then I too took a rickshaw. Now.... As i reached the same spot at the MLK College, I saw both of them there. They had stepped off, and stopped there. This implies that, she didn't ditch me. Maybe she was obliged or something? Okay, back to the moment: as soon as she saw me, she started to laugh loudly pointing towards me and I was confused asf. Maybe she was making fun of me and teasing me idk. Pahle maine socha ki utar ke baat kar lu isi bahane ki has kyu rahi ho lekin fir bhi himmat nahi juta paya. (I can fuck a dozen boys alone in the bus stand, but cant talk to a girl.... WTF???). I did not stop there but stepped of the auto just before the colony.I thought I should wait, maybe she will speak first.But she already took an auto. She saw me and tried to stop at a distance but then went away. I again dk what happened. 
-`,
-        }, {
-            date: "17 May, 2026",
-            title: "Betrayal",
-            content: `17 May: Science Exam (2nd Board). Today, She was not outside the centre, nornat the ground.Nor at the staircase. I thought that's it! But she herself was finding me infront of my classroom.She went after seeing me. Exam ✅, pel ke cheating karwaya puri class ko ☠️. Classroom se bahar nikla hi tha ki wo staircase ke paas khadi hui thi. Then we locked in 2nd longest eye contact of our lives. This time from a much closer distance, we both expected each other to soeak first but none of us did. She gave a beautiful smile then.Finally, walking forward with my friends discussing the paper I dropped my Aadhar Card. Fortunately wo hi mere peeche chal rahi thi. She called me -"Virat! Aadhar Card!!" Bas, I thought ki bc kya ho gaya!!! I took it from her, and could not even say thankyou, I mean what kind of a guy I was man?. Matlab ekdam bsdw hi tha kya mai.  Us din bhi gaywa jaldi chala gaya. Wo mere saath chalti to rahi kaafi door tak. We again walked all the way from St Xavier's to MLK. Her cheeks turned red due to the heat.It was so hot that day, that her speed slowed down at the end . At mlk, i looked back and she was not there.I stood there for a few minutes waiting for her, maybe she was walking slow, then saw her going home with a rickshaw! Well Played ❤️‍🩹. Auto aage badha aur wo apna mu chhupa kar chali gayi. I was cold inside.My heart showed no remorse. "KHEL KHATAM BETA🥀`,
-        },{
-            date: "Random Day",
-            title: "New Hope",
-            content: `5:12PM, random day on july. Mai market jaa raha tha, amdmbedkar tirahe se andar ghusa aur achanak se ekdam door se, EKDAM DOOR SE. Bheed me....................... wo dikh gayi. Mai speed me tha, mera haath aur pair sunn ho gaya. Ek nazar me ek second me pahchan liya maine use. Mai fir scooter ghuma kar ek baar aur gaya to confirm is she was it. And yessss sir! 
-Bhaisab, in an instant i pulled my phone out and took a screenshot of current time. Told gaywa about this. Now imagine, a girl living in sisai, takes admission in a tuition 5kms away from her home. Only for me (my old home). I was moved by her determination. I could never imagine doing any of that, which she did. Mai fir ek aur chakkar marne gaya, this time she saw me but I noticed something unusual all the 3 times when i Saw her. Meri wali always walked on her left side, aur uske right me uski mc dost. But uske peeche peeche ek ladka bhi chal raha tha. Quite close to her. Pahle nazar me laga aise hi jaa raha hoga. Fir second time jab maine use dekha tab wo road cross karke momos khane "Ved Momos" par jaa rahi thi. Uske saath wo bkl bhu road cross karne laga. Aur fir, 3rd time. Wo bkl meri wali, uski dost (abse shortcut me mc bolenge usko: Reason: She should've motivated her to speak first or she could have applied some efforts from her side to help meri wali. + She acted as a resistance wall between us. Aise dost dost kahlane ke layak nhi hote for sure) ek saath momos kha rahe tge and he was paying. There were 2 possibilities, ki wo either one of the girls ka bf tha. Now because he always stood, and walked near "meri wali" i thought ki ye uska bf hai and I was clearly doomed. Mai gusse se samaan lekar ghar chala aaya. Gaywa ko bataya, he also said ki haan maine bhi use ek ladke ke saath mandir me dekha tha which i again assume was largely fake 🤥. Mai baar baar bata raha hu, apni feelings ko express kar pana bahut mushkil hai. To jab bhi ye padhna pause le lekar padhna aur yaad karte rahna. 
-`,
-        },{
-            date: "Thoughts Afterwards",
-            title: "Result Of Overthinking",
-            content: `Ab mujhe lagne laga ki wo Dynamic Coaching me padhti hai kyuki whi mere purane ghar ke sabse paas me hai. I decided ki mai jab bhi jaunga 4:50 par niklunga aur 5:00 tak pahunch jaunga. Then I'll get to see her. 
-`,
-        },{
-            date: "Somedays Afterwards",
-            title: "Grace Of God",
-            content: `Mai almost roz kisi na kisi bahane se jaane laga. Kabhi kabhi to gaywa ko bhi bula leta tha. Kai din tak lagataar jaata raha. To wo nhi milti thi
-
-Ek din gaywa ko bulaya aur ek aur try mara, is baar surya public school ke aage same time par jaate hue dikhi. Maine use almost 100m door se hi dekhliya. Uske paad jakar speed dheemu kari, fir usne mujhe dekhkar aisi smile di ki meri haalat bilkul srk ke is meme ki tarah ho gayi 👇
-
-https://share.google/iQpbugQf2LiLitYjJ
-
-(Dil pe haath)
-
-Fir mai ghoom kar wapis aaya, wo bkl fir se dikh gaya. Pure dimaag ka bhang bhosada ho gaya. Mai gaywa ko bataya use bhi laga ki haan meri wali ka hi bf hai. To firse mai wapis chala aaya.
-
-Yaha ek baat notice karo, gussa hone ke bawajood mai ek bhi din mauka nahi chhodta tha 5 baje jaane ka.And yeah i know i should have remembered those dates. But I couldn't.
-
-Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo nahi dikhi, fir achanak se mere Bagal se auto riksha nikla, jiske andar mujhe aisa Aisa hua ki wo baithi hai. Par Maine itna Dhyan nahin diya aur Main aage chalta Gaya. Jab wo nahin dikhi, tumhen socha ki yah market se Saman lekar wapas chalte Hain, par gaywa bola ki ek round aur. Fir jaise hi me dobara ved momos par pahuchta hu waha mujhe peeche se ek green bag dikha. Mai aage jakar ek dukaan par ruk gaya aur waha kuchh samaan lene ruk gaya ye sochkar ki wo aayegi tab baat ho jayegi. But wo nahi aayi. Aur vo bkl mehra bhi bahut raha tha, maine gaywa se kaha ki tum confirm karogi yah bkl Hai kiska. Usne video vagaira Banakar yah confirm kar diya ki vo bkl Mc ka tha. Also gaywa ne bataya ki jab wo waha tha tab meri wali already jaa chuki thi, most probably mujhe market ki taraf jaate dekh kar wo bhi chali aayi ho mere liye bcoz jab wo bkl aur mc auto me baithe to unhone kaafi der tak wait kiya uska. But I didnt wait. Clearly My fault. 
-`,
-        },{
-            date: "Next Incident",
-            title: "Ved Momos",
-            content: `Is baar to mai seedhe uske bagal me hi ghus gaya. Wo momos kha rahi thi, maine khane ki bajay pack karne ko bola ghar ke liye. Wo mujhe mc ke peeche se chup chup kar dekh rahi thi. Maine bhi dekhna chaha but wo chhup rahi thi. Kuchh ho nahi paya us din bhi. 🙆
-`,
-        },{
-            date: "29 August, 2026",
-            title: "Tried My Best 🫣",
-            content: `Today when i am writing this: 29th August 2026. Aaj Gaywa ka wifi wala kaand hua. Use sort karke mai nikla ek aur try maarne. Aur is baar surya ke age SBI atm ke paas dikhi. Usne mujhe dekha but maine is baar ignore kar diya. Kyuki us bkl se mujhe chidh hai. Gaywa roz bolta hai chalo use pel diya jaye😂. Fir mai bade pul ke andar se ghoom kar nikla, but is baar wo jaane ke mood me nahi thi. BHAIIIIIII WO AAJ KASAM SE JAANE KE MOOD ME NAHI THI BINA BAAT KIYE. ek baar aage gayi, fir laut ke wapis aayi aur surya ke bahar hi khadi ho gayi. Mai ek chakkar gaya- Eye contact successful ✅. Dusre chakkar, opposite side se lagaya to kuchh khaas nahi. 3rd round---> She was clearly upset with me. Aaj pahli baar itne gaur se dekh paya. Bahut pyari lag rahi thi tum.  Fir papa ka phone aa gaya ☠️💀☠️💀☠️💀. Papa ke dar se scooter side me lagakar phone uthaya aur baat kiya, aaj vipassana khatam hone wala tha. Fir maine notice kiya ki hadbadi me chaabi mere haath ne thi, but scooter fir bhi start tha. Are bc 🤣😭.  Aaj laga ki shayad wo apna maan chuki hai mujhe. Mai is baar gaya to waha nahi thi. Fir mai pure highway par, rapti tak har ek auto ko dekhte hue gaya ki shyd kisi me mil jaye. Par naa. Waapsi me bhi nahi. Aaj bahut zyada dukh ho raha hai. Aisa kab tak chalega. Ab mai to roz roz nhi aa paunga na yr. Kaafi upset hu ye likhte hue. Keep notes ki limit khatam hui to socha ek website bana du iske liye. Hamesha ke liye yaad rahega. ❤️`,
-        },{
-            date: "January 15, 2024",
-            title: "The First Hello",
-            content: `TEXT`,
-        },
-    ];
-
+        const HERO_TITLE = "Our Love Story";
+        const HERO_SUBTITLE = "Every moment with you is worth remembering";
+        const FOOTER_TEXT = "To be continued… forever and always";
 
         /* ═══════════════════════════════════════════════════════════════
-           ⚙️  JAVASCRIPT CONTROLS (DO NOT MODIFY UNLESS NEEDED)
+           🛡️ LEVEL 1 SECURITY: HARDENED ANTI-INSPECT PROTECTION
            ═══════════════════════════════════════════════════════════════ */
+        // 1. Disable Right-Click Context Menu
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            return false;
+        });
+
+        // 2. Block Inspect & View-Source Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            // F12
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+                e.preventDefault();
+                return false;
+            }
+            // Cmd+Option+I on macOS
+            if (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U (View Source)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+S (Save Page)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        /* ═══════════════════════════════════════════════════════════════
+           🔐 LEVEL 2 SECURITY: WEBCRYPTO AES-256-GCM ENGINE
+           ═══════════════════════════════════════════════════════════════ */
+        async function deriveAesKey(password, saltUint8) {
+            const enc = new TextEncoder();
+            const baseKey = await crypto.subtle.importKey(
+                "raw",
+                enc.encode(password),
+                { name: "PBKDF2" },
+                false,
+                ["deriveKey"]
+            );
+            return await crypto.subtle.deriveKey(
+                {
+                    name: "PBKDF2",
+                    salt: saltUint8,
+                    iterations: 100000,
+                    hash: "SHA-256"
+                },
+                baseKey,
+                { name: "AES-GCM", length: 256 },
+                false,
+                ["encrypt", "decrypt"]
+            );
+        }
+
+        async function decryptStoriesPayload(password, payload) {
+            const salt = Uint8Array.from(atob(payload.s), c => c.charCodeAt(0));
+            const iv = Uint8Array.from(atob(payload.iv), c => c.charCodeAt(0));
+            const ciphertext = Uint8Array.from(atob(payload.ct), c => c.charCodeAt(0));
+
+            const aesKey = await deriveAesKey(password, salt);
+            const decryptedBuffer = await crypto.subtle.decrypt(
+                { name: "AES-GCM", iv: iv },
+                aesKey,
+                ciphertext
+            );
+            const decryptedJson = new TextDecoder().decode(decryptedBuffer);
+            return JSON.parse(decryptedJson);
+        }
+
+        async function encryptStoriesPayload(password, storiesArray) {
+            const salt = crypto.getRandomValues(new Uint8Array(16));
+            const iv = crypto.getRandomValues(new Uint8Array(12));
+            const aesKey = await deriveAesKey(password, salt);
+            const plaintextBuffer = new TextEncoder().encode(JSON.stringify(storiesArray));
+
+            const ciphertextBuffer = await crypto.subtle.encrypt(
+                { name: "AES-GCM", iv: iv },
+                aesKey,
+                plaintextBuffer
+            );
+
+            function arrayBufferToBase64(buffer) {
+                let binary = '';
+                const bytes = new Uint8Array(buffer);
+                for (let i = 0; i < bytes.byteLength; i++) {
+                    binary += String.fromCharCode(bytes[i]);
+                }
+                return btoa(binary);
+            }
+
+            return {
+                v: 1,
+                s: arrayBufferToBase64(salt),
+                iv: arrayBufferToBase64(iv),
+                ct: arrayBufferToBase64(ciphertextBuffer)
+            };
+        }
 
         // ─── DOM References ───
         const appLoader = document.getElementById('app-loader');
@@ -2028,8 +2841,7 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
         const rememberSessionCheckbox = document.getElementById('remember-session');
         const mainContent = document.getElementById('main-content');
         const topActionBar = document.getElementById('top-action-bar');
-        const cozyNavBtn = document.getElementById('cozy-nav-btn');
-        const lockNavBtn = document.getElementById('lock-nav-btn');
+        const settingsNavBtn = document.getElementById('settings-nav-btn');
         const readingProgressBar = document.getElementById('reading-progress-bar');
         const storiesContainer = document.getElementById('stories-container');
         const totalStoriesEl = document.getElementById('total-stories');
@@ -2037,22 +2849,105 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
         const heroTitleEl = document.getElementById('hero-title');
         const heroSubtitleEl = document.getElementById('hero-subtitle');
         const footerTextEl = document.getElementById('footer-text');
-        const themeButtons = document.querySelectorAll('.theme-btn');
 
         // Apply Custom Text
         heroTitleEl.textContent = HERO_TITLE;
         heroSubtitleEl.textContent = HERO_SUBTITLE;
         footerTextEl.textContent = FOOTER_TEXT;
-        totalStoriesEl.textContent = loveStories.length;
+
+        // ─── Sanctuary Views Navigation (Chapters vs Settings Tab) ───
+        let activeSanctuaryView = 'stories';
+
+        function switchSanctuaryView(viewName) {
+            activeSanctuaryView = viewName;
+            const storiesSec = document.getElementById('stories-section');
+            const settingsSec = document.getElementById('settings-tab-section');
+            const tabStories = document.getElementById('tab-nav-stories');
+            const tabSettings = document.getElementById('tab-nav-settings');
+            const settingsNavBtn = document.getElementById('settings-nav-btn');
+
+            if (viewName === 'settings') {
+                if (storiesSec) storiesSec.style.display = 'none';
+                if (settingsSec) {
+                    settingsSec.style.display = 'block';
+                    settingsSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                if (tabStories) tabStories.classList.remove('active');
+                if (tabSettings) tabSettings.classList.add('active');
+                if (settingsNavBtn) settingsNavBtn.classList.add('active-view');
+            } else {
+                if (settingsSec) settingsSec.style.display = 'none';
+                if (storiesSec) storiesSec.style.display = 'block';
+                if (tabStories) tabStories.classList.add('active');
+                if (tabSettings) tabSettings.classList.remove('active');
+                if (settingsNavBtn) settingsNavBtn.classList.remove('active-view');
+            }
+        }
+
+        // Subtabs inside in-page Settings section
+        function switchInpageSettingsSubtab(subtabId) {
+            document.querySelectorAll('.settings-subnav-btn').forEach(btn => {
+                if (btn.getAttribute('data-subtab') === subtabId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            document.querySelectorAll('.inpage-settings-panel').forEach(panel => {
+                if (panel.id === subtabId) {
+                    panel.style.display = 'block';
+                } else {
+                    panel.style.display = 'none';
+                }
+            });
+        }
+
+        // ─── Settings Trigger & Modal Handlers ───
+        function openSettingsModal() {
+            const modal = document.getElementById('settings-modal');
+            if (modal) modal.classList.add('open');
+        }
+        function closeSettingsModal() {
+            const modal = document.getElementById('settings-modal');
+            if (modal) modal.classList.remove('open');
+        }
+
+        // Settings button in header switches directly to Setting Tab
+        if (settingsNavBtn) {
+            settingsNavBtn.addEventListener('click', () => {
+                if (activeSanctuaryView === 'stories') {
+                    switchSanctuaryView('settings');
+                } else {
+                    switchSanctuaryView('stories');
+                }
+            });
+        }
+
+        function switchSettingsTab(tabId) {
+            document.querySelectorAll('.settings-tab-btn').forEach(btn => {
+                if (btn.getAttribute('data-tab') === tabId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            document.querySelectorAll('.settings-tab-panel').forEach(panel => {
+                if (panel.id === tabId) {
+                    panel.classList.add('active');
+                } else {
+                    panel.classList.remove('active');
+                }
+            });
+        }
 
         // ─── Theme Switcher System ───
         function applyTheme(themeId) {
             document.documentElement.setAttribute('data-theme', themeId);
-            themeButtons.forEach(btn => {
-                if (btn.getAttribute('data-theme-id') === themeId) {
-                    btn.classList.add('active');
+            document.querySelectorAll('.theme-card-option').forEach(card => {
+                if (card.getAttribute('data-theme-id') === themeId) {
+                    card.classList.add('active');
                 } else {
-                    btn.classList.remove('active');
+                    card.classList.remove('active');
                 }
             });
             try {
@@ -2064,12 +2959,157 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
         const savedTheme = localStorage.getItem('our_love_story_theme') || 'midnight';
         applyTheme(savedTheme);
 
-        themeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const themeId = btn.getAttribute('data-theme-id');
-                applyTheme(themeId);
-            });
-        });
+        // ─── Encryptor Tool in Settings ───
+        async function encryptAndAddNewStory() {
+            const dateInput = document.getElementById('new-story-date');
+            const titleInput = document.getElementById('new-story-title');
+            const contentInput = document.getElementById('new-story-content');
+            const outputBox = document.getElementById('tool-output-code');
+            const badge = document.getElementById('copy-badge');
+
+            const date = (dateInput.value || '').trim();
+            const title = (titleInput.value || '').trim();
+            const content = (contentInput.value || '').trim();
+
+            if (!date || !title || !content) {
+                alert("Please fill in the Date, Chapter Title, and Story Content.");
+                return;
+            }
+            if (!CURRENT_SESSION_KEY) {
+                alert("Please unlock the journal first.");
+                return;
+            }
+
+            // Append new story
+            const newStory = { date, title, content };
+            loveStories.push(newStory);
+            renderStories();
+
+            // Re-encrypt the full payload with current session key
+            const newPayload = await encryptStoriesPayload(CURRENT_SESSION_KEY, loveStories);
+            const payloadCode = 'const ENCRYPTED_STORIES_PAYLOAD = ' + JSON.stringify(newPayload, null, 2) + ';';
+
+            outputBox.textContent = payloadCode;
+            outputBox.classList.add('show');
+
+            // Copy to clipboard
+            try {
+                await navigator.clipboard.writeText(payloadCode);
+                badge.classList.add('show');
+                setTimeout(() => badge.classList.remove('show'), 3000);
+            } catch(e) {}
+
+            // Clear inputs
+            dateInput.value = '';
+            titleInput.value = '';
+            contentInput.value = '';
+            alert("Chapter added to live diary! The updated code has been copied to your clipboard. Paste it into index.html to make it permanent on GitHub.");
+        }
+
+        async function changeMasterPassword() {
+            const newPwInput = document.getElementById('new-master-password');
+            const newPassword = (newPwInput.value || '').trim();
+            const badge = document.getElementById('pw-copy-badge');
+
+            if (!newPassword) {
+                alert("Please type a new password.");
+                return;
+            }
+            if (!loveStories || !loveStories.length) {
+                alert("No stories loaded to re-encrypt.");
+                return;
+            }
+
+            CURRENT_SESSION_KEY = newPassword;
+            const newPayload = await encryptStoriesPayload(newPassword, loveStories);
+            const payloadCode = 'const ENCRYPTED_STORIES_PAYLOAD = ' + JSON.stringify(newPayload, null, 2) + ';';
+
+            try {
+                await navigator.clipboard.writeText(payloadCode);
+                badge.classList.add('show');
+                setTimeout(() => badge.classList.remove('show'), 3000);
+            } catch(e) {}
+
+            newPwInput.value = '';
+            alert("Diary re-encrypted with your new password! The updated code has been copied to your clipboard. Paste it into index.html to save it permanently on GitHub.");
+        }
+
+        // ─── In-Page Settings Encryptor & Password Handlers ───
+        async function encryptAndAddNewStoryInpage() {
+            const dateInput = document.getElementById('inpage-new-story-date');
+            const titleInput = document.getElementById('inpage-new-story-title');
+            const contentInput = document.getElementById('inpage-new-story-content');
+            const outputBox = document.getElementById('inpage-tool-output-code');
+            const badge = document.getElementById('inpage-copy-badge');
+
+            const date = (dateInput.value || '').trim();
+            const title = (titleInput.value || '').trim();
+            const content = (contentInput.value || '').trim();
+
+            if (!date || !title || !content) {
+                alert("Please fill in the Date, Chapter Title, and Story Content.");
+                return;
+            }
+            if (!CURRENT_SESSION_KEY) {
+                alert("Please unlock the journal first.");
+                return;
+            }
+
+            const newStory = { date, title, content };
+            loveStories.push(newStory);
+            renderStories();
+
+            const newPayload = await encryptStoriesPayload(CURRENT_SESSION_KEY, loveStories);
+            const payloadCode = 'const ENCRYPTED_STORIES_PAYLOAD = ' + JSON.stringify(newPayload, null, 2) + ';';
+
+            outputBox.textContent = payloadCode;
+            outputBox.classList.add('show');
+
+            try {
+                await navigator.clipboard.writeText(payloadCode);
+                badge.classList.add('show');
+                setTimeout(() => badge.classList.remove('show'), 3000);
+            } catch(e) {}
+
+            dateInput.value = '';
+            titleInput.value = '';
+            contentInput.value = '';
+            alert("Chapter added to live diary! The updated code has been copied to your clipboard. Paste it into index.html to make it permanent on GitHub.");
+        }
+
+        async function changeMasterPasswordInpage() {
+            const newPwInput = document.getElementById('inpage-new-master-password');
+            const newPassword = (newPwInput.value || '').trim();
+            const badge = document.getElementById('inpage-pw-copy-badge');
+
+            if (!newPassword) {
+                alert("Please type a new password.");
+                return;
+            }
+            if (!loveStories || !loveStories.length) {
+                alert("No stories loaded to re-encrypt.");
+                return;
+            }
+
+            CURRENT_SESSION_KEY = newPassword;
+            const newPayload = await encryptStoriesPayload(newPassword, loveStories);
+            const payloadCode = 'const ENCRYPTED_STORIES_PAYLOAD = ' + JSON.stringify(newPayload, null, 2) + ';';
+
+            if (rememberSessionCheckbox.checked) {
+                try {
+                    sessionStorage.setItem('journal_unlocked_key', newPassword);
+                } catch (e) {}
+            }
+
+            try {
+                await navigator.clipboard.writeText(payloadCode);
+                badge.classList.add('show');
+                setTimeout(() => badge.classList.remove('show'), 3000);
+            } catch(e) {}
+
+            newPwInput.value = '';
+            alert("Diary re-encrypted with your new password! The updated code has been copied to your clipboard. Paste it into index.html to save it permanently on GitHub.");
+        }
 
         // ─── Password Show/Hide Toggle ───
         toggleVisibilityBtn.addEventListener('click', () => {
@@ -2093,18 +3133,23 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
             passwordError.classList.remove('show');
             document.body.style.overflow = 'auto';
 
-            if (readingProgressBar) {
+            if (readingProgressBar && localStorage.getItem('journal_reading_progress') !== 'false') {
                 readingProgressBar.classList.add('active');
             }
 
-            if (rememberSessionCheckbox.checked) {
+            if (rememberSessionCheckbox.checked && CURRENT_SESSION_KEY) {
                 try {
-                    sessionStorage.setItem('journal_unlocked', 'true');
+                    sessionStorage.setItem('journal_unlocked_key', CURRENT_SESSION_KEY);
                 } catch (e) {}
             }
 
             renderStories();
             startCanvasAnimation();
+
+            // Notify analytics tracker
+            try {
+                window.dispatchEvent(new CustomEvent('journalUnlockedEvent'));
+            } catch(e) {}
 
             setTimeout(() => {
                 passwordOverlay.style.display = 'none';
@@ -2113,8 +3158,9 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
 
         function lockJournal() {
             try {
-                sessionStorage.removeItem('journal_unlocked');
+                sessionStorage.removeItem('journal_unlocked_key');
             } catch (e) {}
+            CURRENT_SESSION_KEY = "";
             passwordOverlay.style.display = 'flex';
             void passwordOverlay.offsetWidth;
             passwordOverlay.classList.remove('hidden');
@@ -2123,6 +3169,8 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
             document.body.style.overflow = 'hidden';
             passwordInput.value = '';
             passwordError.classList.remove('show');
+            closeSettingsModal();
+            switchSanctuaryView('stories');
 
             if (readingProgressBar) {
                 readingProgressBar.classList.remove('active');
@@ -2132,8 +3180,6 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
             passwordInput.focus();
         }
 
-        lockNavBtn.addEventListener('click', lockJournal);
-
         // ─── Opening & Unlock Calming Loader Animations ───
         function showUnlockTransition() {
             if (!appLoader) {
@@ -2141,11 +3187,9 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
                 return;
             }
 
-            // Change loader text for unlocking transition
             if (loaderTitle) loaderTitle.textContent = "Our Love Story ✦";
             if (loaderStatus) loaderStatus.textContent = "Unlocking our sanctuary with love... ♥";
             
-            // Reset loader bar
             if (loaderBarFill) {
                 loaderBarFill.style.transition = 'none';
                 loaderBarFill.style.width = '0%';
@@ -2155,7 +3199,6 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
             void appLoader.offsetWidth;
             appLoader.classList.remove('fade-out');
 
-            // Animate bar smoothly over ~2.2s
             setTimeout(() => {
                 if (loaderBarFill) {
                     loaderBarFill.style.transition = 'width 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
@@ -2163,12 +3206,10 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
                 }
             }, 50);
 
-            // While relaxing loader is displayed, unlock journal underneath
             setTimeout(() => {
                 unlockJournal();
             }, 1000);
 
-            // Fade out loader gently after 2.4s
             setTimeout(() => {
                 appLoader.classList.add('fade-out');
                 setTimeout(() => {
@@ -2177,22 +3218,31 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
             }, 2400);
         }
 
-        function checkPassword() {
+        async function checkPassword() {
             const entered = passwordInput.value.trim();
-            if (entered === YOUR_PASSWORD.trim()) {
-                showUnlockTransition();
-            } else {
-                passwordError.classList.add('show');
-                passwordInput.focus();
-                
-                // Gentle pulse animation on error
-                passwordInput.parentElement.style.animation = 'none';
-                void passwordInput.parentElement.offsetWidth;
-                passwordInput.parentElement.style.animation = 'gentleShake 0.45s ease';
+            if (!entered) return;
+
+            // Pure mathematical decryption: Only the valid password can decrypt the AES-GCM ciphertext
+            try {
+                const decrypted = await decryptStoriesPayload(entered, ENCRYPTED_STORIES_PAYLOAD);
+                if (Array.isArray(decrypted) && decrypted.length > 0) {
+                    loveStories = decrypted;
+                    CURRENT_SESSION_KEY = entered;
+                    showUnlockTransition();
+                    return;
+                }
+            } catch(e) {
+                // Decryption failed: wrong password or tampered ciphertext
             }
+
+            passwordError.classList.add('show');
+            passwordInput.focus();
+            
+            passwordInput.parentElement.style.animation = 'none';
+            void passwordInput.parentElement.offsetWidth;
+            passwordInput.parentElement.style.animation = 'gentleShake 0.45s ease';
         }
 
-        // Add gentle shake animation dynamically
         const shakeStyle = document.createElement('style');
         shakeStyle.textContent = `
             @keyframes gentleShake {
@@ -2215,11 +3265,11 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
             if (!appLoader) return;
             document.body.style.overflow = 'hidden';
 
-            const isAlreadyUnlocked = (function() {
+            const storedKey = (function() {
                 try {
-                    return sessionStorage.getItem('journal_unlocked') === 'true';
+                    return sessionStorage.getItem('journal_unlocked_key') || '';
                 } catch(e) {
-                    return false;
+                    return '';
                 }
             })();
 
@@ -2232,9 +3282,16 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
             });
 
             setTimeout(() => {
-                if (isAlreadyUnlocked) {
-                    passwordOverlay.style.display = 'none';
-                    unlockJournal();
+                if (storedKey) {
+                    decryptStoriesPayload(storedKey, ENCRYPTED_STORIES_PAYLOAD).then(dec => {
+                        loveStories = dec;
+                        CURRENT_SESSION_KEY = storedKey;
+                        passwordOverlay.style.display = 'none';
+                        unlockJournal();
+                    }).catch(() => {
+                        document.body.style.overflow = 'hidden';
+                        if (passwordInput) passwordInput.focus();
+                    });
                 } else {
                     document.body.style.overflow = 'hidden';
                     if (passwordInput) passwordInput.focus();
@@ -2277,42 +3334,107 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
             });
         }
 
-        function toggleCozyMode() {
-            const isNowActive = document.body.classList.toggle('cozy-mode-active');
-            const textSpan = cozyNavBtn ? cozyNavBtn.querySelector('.cozy-btn-text') : null;
+        function toggleCozyMode(forceState) {
+            let isNowActive;
+            if (typeof forceState === 'boolean') {
+                isNowActive = forceState;
+                if (isNowActive) {
+                    document.body.classList.add('cozy-mode-active');
+                } else {
+                    document.body.classList.remove('cozy-mode-active');
+                }
+            } else {
+                isNowActive = document.body.classList.toggle('cozy-mode-active');
+            }
+
+            // Sync all cozy controls (in-page settings tab and modal settings tab)
+            const toggle1 = document.getElementById('cozy-mode-toggle');
+            const toggle2 = document.getElementById('modal-cozy-mode-toggle');
+            const label1 = document.getElementById('cozy-state-label');
+            const label2 = document.getElementById('modal-cozy-state-label');
+
+            if (toggle1) toggle1.checked = isNowActive;
+            if (toggle2) toggle2.checked = isNowActive;
+            if (label1) label1.textContent = isNowActive ? 'Active' : 'Off';
+            if (label2) label2.textContent = isNowActive ? 'Active' : 'Off';
+
             if (isNowActive) {
-                if (cozyNavBtn) cozyNavBtn.classList.add('active');
-                if (textSpan) textSpan.textContent = 'Cozy: On';
                 updateCozyFocus();
             } else {
-                if (cozyNavBtn) cozyNavBtn.classList.remove('active');
-                if (textSpan) textSpan.textContent = 'Cozy Mode';
                 document.querySelectorAll('.story-card').forEach(c => c.classList.remove('cozy-focused'));
             }
+
             try {
                 localStorage.setItem('journal_cozy_mode', isNowActive ? 'true' : 'false');
             } catch (e) {}
         }
 
-        if (cozyNavBtn) {
-            cozyNavBtn.addEventListener('click', toggleCozyMode);
-        }
-
         // Initialize cozy mode from storage
         try {
             if (localStorage.getItem('journal_cozy_mode') === 'true') {
-                document.body.classList.add('cozy-mode-active');
-                if (cozyNavBtn) {
-                    cozyNavBtn.classList.add('active');
-                    const textSpan = cozyNavBtn.querySelector('.cozy-btn-text');
-                    if (textSpan) textSpan.textContent = 'Cozy: On';
-                }
+                toggleCozyMode(true);
             }
         } catch (e) {}
 
         // ─── Golden Timeline Reading Progress Bar ───
+        function toggleReadingProgress(forceState) {
+            const toggle1 = document.getElementById('progress-bar-toggle');
+            const toggle2 = document.getElementById('modal-progress-bar-toggle');
+            const isNowActive = typeof forceState === 'boolean' ? forceState : (toggle1 ? toggle1.checked : true);
+
+            if (toggle1) toggle1.checked = isNowActive;
+            if (toggle2) toggle2.checked = isNowActive;
+
+            const label1 = document.getElementById('progress-state-label');
+            const label2 = document.getElementById('modal-progress-state-label');
+            if (label1) label1.textContent = isNowActive ? 'On' : 'Off';
+            if (label2) label2.textContent = isNowActive ? 'On' : 'Off';
+
+            if (readingProgressBar) {
+                readingProgressBar.style.display = isNowActive ? 'block' : 'none';
+                if (isNowActive) readingProgressBar.classList.add('active');
+                else readingProgressBar.classList.remove('active');
+            }
+            try {
+                localStorage.setItem('journal_reading_progress', isNowActive ? 'true' : 'false');
+            } catch(e) {}
+        }
+
+        function toggleAmbientEffects(forceState) {
+            const toggle1 = document.getElementById('ambient-effects-toggle');
+            const toggle2 = document.getElementById('modal-ambient-effects-toggle');
+            const isNowActive = typeof forceState === 'boolean' ? forceState : (toggle1 ? toggle1.checked : true);
+
+            if (toggle1) toggle1.checked = isNowActive;
+            if (toggle2) toggle2.checked = isNowActive;
+
+            const label1 = document.getElementById('ambient-state-label');
+            const label2 = document.getElementById('modal-ambient-state-label');
+            if (label1) label1.textContent = isNowActive ? 'On' : 'Off';
+            if (label2) label2.textContent = isNowActive ? 'On' : 'Off';
+
+            const canvas = document.getElementById('star-canvas');
+            const aurora = document.querySelector('.aurora-mesh');
+            if (canvas) canvas.style.opacity = isNowActive ? '1' : '0';
+            if (aurora) aurora.style.opacity = isNowActive ? '0.85' : '0.25';
+
+            try {
+                localStorage.setItem('journal_ambient_effects', isNowActive ? 'true' : 'false');
+            } catch(e) {}
+        }
+
+        // Initialize progress & ambient preferences
+        try {
+            if (localStorage.getItem('journal_reading_progress') === 'false') {
+                toggleReadingProgress(false);
+            }
+            if (localStorage.getItem('journal_ambient_effects') === 'false') {
+                toggleAmbientEffects(false);
+            }
+        } catch(e) {}
+
         function updateReadingProgress() {
-            if (!readingProgressBar) return;
+            if (!readingProgressBar || readingProgressBar.style.display === 'none') return;
             const scrollTop = window.scrollY || document.documentElement.scrollTop;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             if (docHeight > 0) {
@@ -2439,6 +3561,11 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
                 storiesContainer.appendChild(card);
             });
 
+            // Update total stories counters
+            if (totalStoriesEl) totalStoriesEl.textContent = loveStories.length;
+            const tabStoriesCountEl = document.getElementById('tab-stories-count');
+            if (tabStoriesCountEl) tabStoriesCountEl.textContent = loveStories.length;
+
             // Update cozy focus after rendering cards
             updateCozyFocus();
         }
@@ -2545,6 +3672,81 @@ Uske baad ek din fir se mai gaywa ke saath jaata hu. Mai andar jaate gaya aur wo
 
         // Start canvas immediately for background mood
         startCanvasAnimation();
+
+        // ─── Ethical Device & Visit Analytics (Local Session Tracker) ───
+        (function initPrivateSessionTracker() {
+            try {
+                const sessionStartTime = Date.now();
+                const userAgent = navigator.userAgent || '';
+                
+                // Ethical, privacy-safe device classification
+                let deviceType = 'Desktop';
+                if (/mobile|android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
+                    deviceType = /tablet|ipad/i.test(userAgent.toLowerCase()) ? 'Tablet' : 'Mobile Phone';
+                }
+
+                // Detect browser family safely
+                let browserName = 'Browser';
+                if (/edg/i.test(userAgent)) browserName = 'Edge';
+                else if (/chrome|crios/i.test(userAgent)) browserName = 'Chrome';
+                else if (/firefox|fxios/i.test(userAgent)) browserName = 'Firefox';
+                else if (/safari/i.test(userAgent)) browserName = 'Safari';
+
+                // Screen resolution & viewport
+                const screenResolution = `${window.screen.width}x${window.screen.height}`;
+                const preferredLanguage = navigator.language || 'Unknown';
+
+                // Record visit history in localStorage (Client-side privacy first)
+                const storageKey = 'journal_visit_history';
+                let history = [];
+                try {
+                    history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                } catch(e) {
+                    history = [];
+                }
+
+                const currentSessionIndex = history.length;
+                const newRecord = {
+                    sessionNumber: currentSessionIndex + 1,
+                    firstVisitTimestamp: new Date().toISOString(),
+                    deviceType: deviceType,
+                    browser: browserName,
+                    screenResolution: screenResolution,
+                    language: preferredLanguage,
+                    durationSeconds: 0,
+                    unlockedJournal: false
+                };
+                history.push(newRecord);
+                try {
+                    localStorage.setItem(storageKey, JSON.stringify(history.slice(-50))); // Keep last 50 visits
+                } catch(e) {}
+
+                // Update session duration periodically
+                setInterval(() => {
+                    const elapsedSeconds = Math.round((Date.now() - sessionStartTime) / 1000);
+                    try {
+                        let records = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                        if (records[records.length - 1]) {
+                            records[records.length - 1].durationSeconds = elapsedSeconds;
+                            localStorage.setItem(storageKey, JSON.stringify(records));
+                        }
+                    } catch(e) {}
+                }, 10000);
+
+                // Listen for unlock to note that journal was accessed
+                window.addEventListener('journalUnlockedEvent', () => {
+                    try {
+                        let records = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                        if (records[records.length - 1]) {
+                            records[records.length - 1].unlockedJournal = true;
+                            localStorage.setItem(storageKey, JSON.stringify(records));
+                        }
+                    } catch(e) {}
+                });
+            } catch(e) {
+                // Fail silently without disrupting user experience
+            }
+        })();
     </script>
 </body>
 </html>
