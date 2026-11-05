@@ -1,0 +1,3040 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story ✦ A Private Journal</title>
+    <meta name="description" content="A private romantic journal and love story memory timeline.">
+    <meta property="og:title" content="Our Love Story ✦ A Private Journal">
+    <meta property="og:description" content="A private romantic journal and love story memory timeline.">
+
+    <!-- Romantic & Calming Typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Dancing+Script:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         📊 OPTIONAL WEB ANALYTICS TRACKER (GOOGLE ANALYTICS 4)
+         ═══════════════════════════════════════════════════════════════
+         To track how many people visit, time spent, device models, 
+         locations & screen resolutions ethically for GitHub Pages:
+         1. Create a free account at https://analytics.google.com
+         2. Create a "Web Data Stream" with your GitHub Pages URL
+         3. Replace 'G-XXXXXXXXXX' below with your Measurement ID
+         4. Remove the <!-- and --> comment tags around the scripts below:
+    -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        cookie_flags: 'SameSite=None;Secure',
+        anonymize_ip: true
+      });
+    </script>
+    -->
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           🎨  THEMES & DESIGN SYSTEM (ALL IN PURE CSS)
+           ═══════════════════════════════════════════════════════════════ */
+
+        /* ─── Default / Theme 1: Midnight Romance ─── */
+        :root, [data-theme="midnight"] {
+            --bg-deep: #090a14;
+            --bg-gradient-top: #121029;
+            --bg-gradient-bottom: #06060c;
+            --bg-card: rgba(22, 21, 40, 0.48);
+            --bg-card-hover: rgba(30, 28, 56, 0.65);
+            --border-primary: rgba(218, 185, 126, 0.28);
+            --border-primary-bright: rgba(228, 198, 142, 0.65);
+            --text-main: #f5eee2;
+            --text-muted: #b9adc7;
+            --text-warm: #edd8be;
+            --accent-gold: #dab97e;
+            --accent-rose: #e6a8b2;
+            --accent-glow: rgba(218, 185, 126, 0.2);
+            --shadow-card: 0 16px 45px rgba(0, 0, 0, 0.45), 0 0 50px rgba(218, 185, 126, 0.04);
+            --shadow-card-hover: 0 22px 60px rgba(0, 0, 0, 0.55), 0 0 70px rgba(218, 185, 126, 0.12);
+            --aurora-1: rgba(56, 38, 102, 0.35);
+            --aurora-2: rgba(24, 52, 82, 0.28);
+            --star-color: 245, 238, 226;
+            --tag-bg: rgba(218, 185, 126, 0.12);
+        }
+
+        /* ─── Theme 2: Sunlit Romance (Light Mode) ─── */
+        [data-theme="light"] {
+            --bg-deep: #fcf9f2;
+            --bg-gradient-top: #f7f1e7;
+            --bg-gradient-bottom: #eee4d5;
+            --bg-card: rgba(255, 255, 255, 0.82);
+            --bg-card-hover: rgba(255, 255, 255, 0.96);
+            --border-primary: rgba(184, 134, 54, 0.28);
+            --border-primary-bright: rgba(184, 134, 54, 0.72);
+            --text-main: #2b221d;
+            --text-muted: #6e6157;
+            --text-warm: #845334;
+            --accent-gold: #b38032;
+            --accent-rose: #be5d72;
+            --accent-glow: rgba(179, 128, 50, 0.18);
+            --shadow-card: 0 14px 40px rgba(135, 110, 85, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-card-hover: 0 22px 55px rgba(135, 110, 85, 0.2), 0 0 28px rgba(179, 128, 50, 0.16);
+            --aurora-1: rgba(255, 218, 185, 0.55);
+            --aurora-2: rgba(230, 210, 240, 0.45);
+            --star-color: 179, 128, 50;
+            --tag-bg: rgba(179, 128, 50, 0.12);
+        }
+
+        /* ─── Theme 3: Sakura Twilight ─── */
+        [data-theme="sakura"] {
+            --bg-deep: #130a15;
+            --bg-gradient-top: #241126;
+            --bg-gradient-bottom: #0a050c;
+            --bg-card: rgba(38, 18, 38, 0.45);
+            --bg-card-hover: rgba(54, 25, 54, 0.62);
+            --border-primary: rgba(235, 160, 180, 0.3);
+            --border-primary-bright: rgba(248, 185, 202, 0.7);
+            --text-main: #fdf5f7;
+            --text-muted: #cdb0bf;
+            --text-warm: #f6ced7;
+            --accent-gold: #f09bb0;
+            --accent-rose: #f4b8c6;
+            --accent-glow: rgba(240, 155, 176, 0.25);
+            --shadow-card: 0 16px 45px rgba(0, 0, 0, 0.45), 0 0 50px rgba(240, 155, 176, 0.06);
+            --shadow-card-hover: 0 22px 60px rgba(0, 0, 0, 0.55), 0 0 70px rgba(240, 155, 176, 0.15);
+            --aurora-1: rgba(105, 30, 72, 0.38);
+            --aurora-2: rgba(65, 22, 68, 0.32);
+            --star-color: 253, 245, 247;
+            --tag-bg: rgba(240, 155, 176, 0.14);
+        }
+
+        /* ─── Theme 3: Emerald Whisper ─── */
+        [data-theme="emerald"] {
+            --bg-deep: #07120e;
+            --bg-gradient-top: #10241d;
+            --bg-gradient-bottom: #040907;
+            --bg-card: rgba(16, 36, 29, 0.48);
+            --bg-card-hover: rgba(23, 50, 41, 0.65);
+            --border-primary: rgba(142, 203, 172, 0.28);
+            --border-primary-bright: rgba(172, 228, 199, 0.68);
+            --text-main: #f1f8f4;
+            --text-muted: #a6c3b6;
+            --text-warm: #d7e8de;
+            --accent-gold: #82caa3;
+            --accent-rose: #e6b88e;
+            --accent-glow: rgba(130, 202, 163, 0.22);
+            --shadow-card: 0 16px 45px rgba(0, 0, 0, 0.45), 0 0 50px rgba(130, 202, 163, 0.05);
+            --shadow-card-hover: 0 22px 60px rgba(0, 0, 0, 0.55), 0 0 70px rgba(130, 202, 163, 0.13);
+            --aurora-1: rgba(18, 70, 52, 0.4);
+            --aurora-2: rgba(12, 45, 45, 0.32);
+            --star-color: 241, 248, 244;
+            --tag-bg: rgba(130, 202, 163, 0.12);
+        }
+
+        /* ─── Theme 4: Lavender Serenity ─── */
+        [data-theme="lavender"] {
+            --bg-deep: #0f0c1a;
+            --bg-gradient-top: #1d1733;
+            --bg-gradient-bottom: #090710;
+            --bg-card: rgba(30, 23, 50, 0.48);
+            --bg-card-hover: rgba(43, 33, 72, 0.65);
+            --border-primary: rgba(186, 160, 227, 0.3);
+            --border-primary-bright: rgba(210, 188, 245, 0.68);
+            --text-main: #f7f4fd;
+            --text-muted: #bbb0cf;
+            --text-warm: #e0d5f6;
+            --accent-gold: #b79ae6;
+            --accent-rose: #e8a8c4;
+            --accent-glow: rgba(183, 154, 230, 0.24);
+            --shadow-card: 0 16px 45px rgba(0, 0, 0, 0.45), 0 0 50px rgba(183, 154, 230, 0.05);
+            --shadow-card-hover: 0 22px 60px rgba(0, 0, 0, 0.55), 0 0 70px rgba(183, 154, 230, 0.14);
+            --aurora-1: rgba(72, 38, 115, 0.4);
+            --aurora-2: rgba(40, 28, 85, 0.34);
+            --star-color: 247, 244, 253;
+            --tag-bg: rgba(183, 154, 230, 0.13);
+        }
+
+        /* ─── Theme 5: Warm Sunset Glow ─── */
+        [data-theme="sunset"] {
+            --bg-deep: #160d0b;
+            --bg-gradient-top: #2b1511;
+            --bg-gradient-bottom: #0b0605;
+            --bg-card: rgba(44, 22, 18, 0.48);
+            --bg-card-hover: rgba(60, 30, 24, 0.65);
+            --border-primary: rgba(234, 156, 118, 0.3);
+            --border-primary-bright: rgba(248, 183, 148, 0.68);
+            --text-main: #fff5ee;
+            --text-muted: #d0b2a3;
+            --text-warm: #fad4c0;
+            --accent-gold: #f29f74;
+            --accent-rose: #ebb272;
+            --accent-glow: rgba(242, 159, 116, 0.22);
+            --shadow-card: 0 16px 45px rgba(0, 0, 0, 0.45), 0 0 50px rgba(242, 159, 116, 0.05);
+            --shadow-card-hover: 0 22px 60px rgba(0, 0, 0, 0.55), 0 0 70px rgba(242, 159, 116, 0.14);
+            --aurora-1: rgba(105, 42, 28, 0.42);
+            --aurora-2: rgba(85, 52, 22, 0.32);
+            --star-color: 255, 245, 238;
+            --tag-bg: rgba(242, 159, 116, 0.13);
+        }
+
+        /* ─── Theme 6: Celestial Cashmere ─── */
+        [data-theme="celestial"] {
+            --bg-deep: #0d0e13;
+            --bg-gradient-top: #171b26;
+            --bg-gradient-bottom: #07080a;
+            --bg-card: rgba(24, 28, 38, 0.5);
+            --bg-card-hover: rgba(35, 41, 56, 0.68);
+            --border-primary: rgba(198, 208, 226, 0.28);
+            --border-primary-bright: rgba(225, 235, 252, 0.65);
+            --text-main: #f6f8fc;
+            --text-muted: #b6becd;
+            --text-warm: #dbe2ef;
+            --accent-gold: #c0ceea;
+            --accent-rose: #dfc9a5;
+            --accent-glow: rgba(192, 206, 234, 0.2);
+            --shadow-card: 0 16px 45px rgba(0, 0, 0, 0.45), 0 0 50px rgba(192, 206, 234, 0.05);
+            --shadow-card-hover: 0 22px 60px rgba(0, 0, 0, 0.55), 0 0 70px rgba(192, 206, 234, 0.12);
+            --aurora-1: rgba(36, 52, 85, 0.38);
+            --aurora-2: rgba(25, 34, 58, 0.32);
+            --star-color: 246, 248, 252;
+            --tag-bg: rgba(192, 206, 234, 0.12);
+        }
+
+        /* ─── Common Typography & Layout Tokens ─── */
+        :root {
+            --font-script: 'Great Vibes', cursive;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Cormorant Garamond', serif;
+            --font-decorative: 'Dancing Script', cursive;
+            --font-ui: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --radius-card: 20px;
+            --radius-pill: 9999px;
+            --transition-smooth: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-theme: background 0.7s ease, color 0.5s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        /* ─── Reset & Base ─── */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            line-height: 1.75;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+            transition: var(--transition-theme);
+        }
+
+        /* ─── Custom Scrollbar ─── */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-deep);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-primary);
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-gold);
+        }
+
+        /* ─── Ethereal Calming Background ─── */
+        .ambient-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+            transition: var(--transition-theme);
+        }
+
+        /* Soft Breathing Aurora Blobs */
+        .aurora-mesh {
+            position: absolute;
+            inset: -20%;
+            background: 
+                radial-gradient(ellipse 65% 55% at 20% 25%, var(--aurora-1) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 60% at 80% 75%, var(--aurora-2) 0%, transparent 75%),
+                radial-gradient(ellipse 50% 50% at 50% 50%, rgba(0, 0, 0, 0.1) 0%, var(--bg-deep) 100%);
+            filter: blur(60px);
+            opacity: 0.85;
+            animation: auroraBreathe 18s ease-in-out infinite alternate;
+            transition: var(--transition-theme);
+        }
+
+        @keyframes auroraBreathe {
+            0% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.75;
+            }
+            50% {
+                transform: scale(1.08) rotate(2deg);
+                opacity: 0.95;
+            }
+            100% {
+                transform: scale(1.02) rotate(-2deg);
+                opacity: 0.8;
+            }
+        }
+
+        #star-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* ─── Minimalist Top Floating Controls (Settings & Lock) ─── */
+        .top-action-bar {
+            position: fixed;
+            top: 18px;
+            right: 22px;
+            left: auto;
+            transform: none;
+            z-index: 900;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-pill);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+            transition: var(--transition-smooth);
+            box-sizing: border-box;
+        }
+        .top-action-bar:hover {
+            border-color: var(--border-primary-bright);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.38);
+        }
+
+        .settings-nav-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-pill);
+            padding: 6px 14px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            user-select: none;
+        }
+        .settings-nav-btn:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            background: var(--tag-bg);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+        .settings-nav-btn .gear-icon {
+            font-size: 0.95rem;
+            display: inline-block;
+            transition: transform 0.5s ease;
+        }
+        .settings-nav-btn:hover .gear-icon {
+            transform: rotate(60deg);
+        }
+
+        .cozy-nav-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-pill);
+            padding: 6px 13px;
+            color: var(--text-muted);
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            user-select: none;
+        }
+        .cozy-nav-btn:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            background: var(--tag-bg);
+        }
+        .cozy-nav-btn.active {
+            color: #fff;
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 14px var(--accent-glow);
+            font-weight: 600;
+        }
+
+        .lock-nav-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-pill);
+            padding: 6px 13px;
+            color: var(--text-muted);
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            user-select: none;
+        }
+        .lock-nav-btn:hover {
+            color: var(--accent-rose);
+            border-color: var(--accent-rose);
+            background: rgba(230, 168, 178, 0.12);
+        }
+
+        /* ─── Soothing Settings Drawer & Dialog Modal ─── */
+        .settings-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 7, 14, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+            padding: 16px;
+        }
+        .settings-modal-backdrop.open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .settings-modal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary-bright);
+            border-radius: 24px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 0 0 60px var(--accent-glow);
+            max-width: 620px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            transform: scale(0.96) translateY(10px);
+            transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .settings-modal-backdrop.open .settings-modal-card {
+            transform: scale(1) translateY(0);
+        }
+        .settings-modal-header {
+            padding: 20px 24px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-primary);
+        }
+        .settings-modal-title {
+            font-family: var(--font-heading);
+            font-size: 1.45rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        .settings-close-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-primary);
+            color: var(--text-muted);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        .settings-close-btn:hover {
+            color: var(--text-main);
+            background: var(--tag-bg);
+            border-color: var(--accent-gold);
+            transform: scale(1.08);
+        }
+
+        /* Settings Tabs Navigation */
+        .settings-tabs-nav {
+            display: flex;
+            gap: 8px;
+            padding: 12px 24px 0;
+            border-bottom: 1px solid var(--border-primary);
+            background: rgba(0, 0, 0, 0.15);
+        }
+        .settings-tab-btn {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            padding: 8px 14px 10px;
+            color: var(--text-muted);
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .settings-tab-btn:hover {
+            color: var(--text-main);
+        }
+        .settings-tab-btn.active {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .settings-tab-content-area {
+            padding: 22px 24px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        .settings-tab-panel {
+            display: none;
+        }
+        .settings-tab-panel.active {
+            display: block;
+            animation: fadeInTab 0.3s ease;
+        }
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Theme Grid in Settings */
+        .themes-settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .theme-card-option {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1.5px solid var(--border-primary);
+            border-radius: 14px;
+            padding: 12px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            user-select: none;
+        }
+        .theme-card-option:hover {
+            border-color: var(--border-primary-bright);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+        .theme-card-option.active {
+            border-color: var(--accent-gold);
+            background: var(--tag-bg);
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+        .theme-card-preview-swatch {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+        }
+        .theme-card-name {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Encryptor Tool UI in Settings */
+        .encrypt-tool-section {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .encrypt-tool-instruction {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            background: rgba(218, 185, 126, 0.08);
+            border-left: 3px solid var(--accent-gold);
+            padding: 10px 14px;
+            border-radius: 0 10px 10px 0;
+            margin: 0;
+        }
+        .tool-field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .tool-field-label {
+            font-family: var(--font-ui);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-warm);
+            font-weight: 600;
+        }
+        .tool-input-text, .tool-textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 10px 14px;
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+        .tool-textarea {
+            min-height: 120px;
+            resize: vertical;
+            line-height: 1.5;
+        }
+        .tool-input-text:focus, .tool-textarea:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 14px var(--accent-glow);
+        }
+        .tool-action-btn-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .tool-btn-primary {
+            background: linear-gradient(135deg, rgba(218, 185, 126, 0.35), rgba(230, 168, 178, 0.3));
+            border: 1.5px solid var(--border-primary-bright);
+            border-radius: var(--radius-pill);
+            padding: 9px 20px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tool-btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px var(--accent-glow);
+            border-color: var(--accent-gold);
+        }
+        .tool-output-box {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            max-height: 160px;
+            overflow-y: auto;
+            word-break: break-all;
+            user-select: all;
+            display: none;
+        }
+        .tool-output-box.show {
+            display: block;
+        }
+        .tool-copy-badge {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            color: #82caa3;
+            margin-left: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tool-copy-badge.show {
+            opacity: 1;
+        }
+
+        /* Light Mode Specific Harmonizations */
+        [data-theme="light"] .aurora-mesh {
+            background: 
+                radial-gradient(ellipse 65% 55% at 20% 25%, var(--aurora-1) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 60% at 80% 75%, var(--aurora-2) 0%, transparent 75%),
+                radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255, 255, 255, 0.35) 0%, var(--bg-deep) 100%);
+            opacity: 0.7;
+        }
+        [data-theme="light"] .custom-embedded-audio {
+            filter: none;
+        }
+        [data-theme="light"] .password-input-wrapper {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        [data-theme="light"] .password-input-wrapper input::placeholder {
+            color: rgba(110, 97, 87, 0.55);
+        }
+        [data-theme="light"] .top-action-bar,
+        [data-theme="light"] .settings-modal-card {
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 10px 30px rgba(135, 110, 85, 0.16);
+        }
+        [data-theme="light"] .tool-input-text, [data-theme="light"] .tool-textarea, [data-theme="light"] .tool-output-box {
+            background: rgba(255, 255, 255, 0.85);
+            color: #2b221d;
+        }
+        [data-theme="light"] .cozy-nav-btn,
+        [data-theme="light"] .lock-nav-btn,
+        [data-theme="light"] .settings-nav-btn {
+            background: rgba(255, 255, 255, 0.75);
+        }
+        [data-theme="light"] .hero-stat {
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 4px 15px rgba(135, 110, 85, 0.08);
+        }
+
+        /* ─── Minimalist Golden Timeline Reading Progress Bar ─── */
+        .reading-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose), #edd8be);
+            box-shadow: 0 0 10px var(--accent-glow), 0 0 4px var(--accent-gold);
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+            transition: width 0.15s ease-out, opacity 0.4s ease;
+        }
+        .reading-progress-bar.active {
+            opacity: 1;
+        }
+        @media (max-width: 640px) {
+            .reading-progress-bar {
+                height: 2px;
+                box-shadow: 0 0 6px var(--accent-glow);
+            }
+        }
+
+        /* ─── Cozy Reading Focus Mode ─── */
+        body.cozy-mode-active .story-card {
+            opacity: 0.35;
+            filter: blur(0.4px);
+            transform: scale(0.985);
+            transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+        }
+        body.cozy-mode-active .story-card.cozy-focused {
+            opacity: 1 !important;
+            filter: none !important;
+            transform: scale(1.01) !important;
+            border-color: var(--border-primary-bright) !important;
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.65), 0 0 50px var(--accent-glow) !important;
+            background: var(--bg-card-hover) !important;
+        }
+
+        /* ─── Embedded Media (Images & Audio Inside Cards) ─── */
+        .embedded-media-block {
+            margin: 1.6rem auto;
+            max-width: 100%;
+            text-align: center;
+        }
+        .embedded-image-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-primary);
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            transition: var(--transition-smooth);
+            display: inline-block;
+            max-width: 100%;
+        }
+        .embedded-image-card:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 14px 40px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+        .embedded-img {
+            width: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            cursor: zoom-in;
+            transition: opacity 0.3s;
+        }
+        .embedded-img:hover {
+            opacity: 0.95;
+        }
+        .embedded-caption {
+            display: block;
+            font-family: var(--font-decorative);
+            font-size: 1.15rem;
+            color: var(--text-warm);
+            margin-top: 0.75rem;
+            letter-spacing: 1px;
+            font-style: italic;
+            padding: 0 8px;
+        }
+
+        /* Audio Player inside Story Card */
+        .embedded-audio-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-primary);
+            border-radius: 20px;
+            padding: 16px 20px;
+            max-width: 520px;
+            width: 100%;
+            margin: 1.6rem auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: var(--transition-smooth);
+        }
+        .embedded-audio-card:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 12px 35px var(--accent-glow);
+        }
+        .embedded-audio-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-family: var(--font-decorative);
+            font-size: 1.25rem;
+            color: var(--text-warm);
+            letter-spacing: 1px;
+        }
+        .embedded-audio-header .audio-icon {
+            font-size: 1.1rem;
+            animation: pulse-heart 2.5s ease-in-out infinite;
+        }
+        .custom-embedded-audio {
+            width: 100%;
+            height: 38px;
+            border-radius: 20px;
+            outline: none;
+            filter: invert(0.88) hue-rotate(180deg) brightness(1.1);
+        }
+        [data-theme="sakura"] .custom-embedded-audio {
+            filter: invert(0.85) hue-rotate(270deg) brightness(1.1);
+        }
+        [data-theme="emerald"] .custom-embedded-audio {
+            filter: invert(0.85) hue-rotate(70deg) brightness(1.1);
+        }
+
+        /* Image Lightbox */
+        .image-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(5, 5, 12, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            padding: 20px;
+        }
+        .image-lightbox.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .lightbox-dialog {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            text-align: center;
+        }
+        .lightbox-dialog img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 16px;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 50px var(--accent-glow);
+            object-fit: contain;
+        }
+        .lightbox-caption {
+            font-family: var(--font-decorative);
+            font-size: 1.3rem;
+            color: var(--text-warm);
+            margin-top: 1rem;
+            letter-spacing: 1px;
+        }
+        .lightbox-close-btn {
+            position: absolute;
+            top: -16px;
+            right: -16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid var(--border-primary);
+            color: var(--text-main);
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+        .lightbox-close-btn:hover {
+            background: var(--accent-rose);
+            color: var(--bg-deep);
+            transform: scale(1.1);
+        }
+
+        /* ─── Ethereal Calming App Loader Screen ─── */
+        #app-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999999;
+            background: radial-gradient(ellipse at center, rgba(18, 18, 34, 0.96) 0%, var(--bg-deep) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.85s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+            padding: 24px;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+        }
+        #app-loader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            animation: loaderFloat 4s ease-in-out infinite alternate;
+        }
+        @keyframes loaderFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-7px); }
+        }
+
+        .loader-emblem {
+            position: relative;
+            width: 88px;
+            height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.6rem;
+        }
+        .loader-ring-outer {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1.5px dashed var(--border-primary-bright);
+            animation: rotateLoader 20s linear infinite;
+        }
+        .loader-ring-inner {
+            position: absolute;
+            inset: 9px;
+            border-radius: 50%;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 0 25px var(--accent-glow);
+            animation: rotateLoaderReverse 14s linear infinite;
+        }
+        @keyframes rotateLoader {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes rotateLoaderReverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+        .loader-core-heart {
+            font-size: 2rem;
+            color: var(--accent-rose);
+            animation: pulse-loader-heart 2.2s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px var(--accent-glow));
+            line-height: 1;
+        }
+        @keyframes pulse-loader-heart {
+            0%, 100% {
+                transform: scale(0.95);
+                opacity: 0.75;
+            }
+            50% {
+                transform: scale(1.18);
+                opacity: 1;
+                filter: drop-shadow(0 0 25px var(--accent-rose));
+            }
+        }
+
+        .loader-title {
+            font-family: var(--font-script);
+            font-size: clamp(2.4rem, 5vw, 3.2rem);
+            color: var(--text-main);
+            letter-spacing: 1.5px;
+            margin-bottom: 0.35rem;
+            text-shadow: 0 0 35px var(--accent-glow);
+            line-height: 1.2;
+        }
+
+        .loader-status-text {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            color: var(--text-warm);
+            font-style: italic;
+            letter-spacing: 0.8px;
+            margin-bottom: 1.8rem;
+            opacity: 0.88;
+            transition: opacity 0.3s ease;
+        }
+
+        .loader-bar-track {
+            width: 180px;
+            height: 2.5px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .loader-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-rose), #edd8be);
+            box-shadow: 0 0 12px var(--accent-glow);
+            border-radius: 10px;
+            transition: width 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* ─── Glorious, Majestic & Calming Password Sanctuary ─── */
+        #password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            background: radial-gradient(circle at center, rgba(16, 17, 30, 0.88) 0%, var(--bg-deep) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.85s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+            padding: 24px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        #password-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .password-glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 28px;
+            padding: 50px 42px 42px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 0 0 90px var(--accent-glow);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
+            position: relative;
+            animation: cardFloat 6s ease-in-out infinite alternate;
+            transition: var(--transition-theme);
+        }
+        @keyframes cardFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-7px); }
+        }
+
+        /* Ornate card corner accents */
+        .card-corner {
+            position: absolute;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            opacity: 0.5;
+            user-select: none;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .corner-tl { top: 14px; left: 16px; }
+        .corner-tr { top: 14px; right: 16px; }
+        .corner-bl { bottom: 14px; left: 16px; }
+        .corner-br { bottom: 14px; right: 16px; }
+
+        /* Royal talisman crest */
+        .seal-container {
+            position: relative;
+            width: 82px;
+            height: 82px;
+            margin: 0 auto 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .seal-ring {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .seal-ring-outer {
+            inset: 0;
+            border: 1.5px dashed var(--border-primary);
+            animation: rotateSeal 24s linear infinite;
+        }
+        .seal-ring-inner {
+            inset: 8px;
+            border: 1px solid var(--border-primary-bright);
+            box-shadow: 0 0 16px var(--accent-glow);
+            animation: rotateSealReverse 18s linear infinite;
+        }
+        @keyframes rotateSeal {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes rotateSealReverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+        .seal-core {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(218, 185, 126, 0.15) 70%, transparent 100%);
+            border: 1px solid var(--border-primary-bright);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 25px var(--accent-glow);
+            animation: pulse-core 3s ease-in-out infinite;
+        }
+        @keyframes pulse-core {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--accent-glow); }
+            50% { transform: scale(1.06); box-shadow: 0 0 32px var(--accent-glow); }
+        }
+        .seal-icon {
+            font-size: 1.6rem;
+            filter: drop-shadow(0 0 8px var(--accent-gold));
+            line-height: 1;
+        }
+
+        .lock-header-stars {
+            font-size: 0.8rem;
+            letter-spacing: 6px;
+            color: var(--accent-gold);
+            opacity: 0.75;
+            margin-bottom: 0.2rem;
+            user-select: none;
+        }
+
+        .lock-title {
+            font-family: var(--font-script);
+            font-size: clamp(2.6rem, 6vw, 3.4rem);
+            color: var(--text-main);
+            margin-bottom: 0.35rem;
+            letter-spacing: 1px;
+            line-height: 1.15;
+            text-shadow: 0 0 40px var(--accent-glow);
+        }
+
+        .lock-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.12rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-style: italic;
+            letter-spacing: 0.4px;
+            line-height: 1.5;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .password-form-box {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+            max-width: 390px;
+            margin: 0 auto;
+        }
+
+        .password-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1.5px solid var(--border-primary);
+            border-radius: var(--radius-pill);
+            padding: 6px 12px 6px 20px;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(12px);
+        }
+        .password-input-wrapper:focus-within {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 28px var(--accent-glow), inset 0 0 12px rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.075);
+        }
+
+        .password-input-wrapper input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 1.05rem;
+            letter-spacing: 1.5px;
+            padding: 8px 4px;
+            min-width: 0;
+        }
+        .password-input-wrapper input::-webkit-search-cancel-button,
+        .password-input-wrapper input::-webkit-clear-button,
+        .password-input-wrapper input::-ms-clear,
+        .password-input-wrapper input::-ms-reveal {
+            display: none !important;
+            -webkit-appearance: none;
+        }
+        .password-input-wrapper input::placeholder {
+            color: rgba(200, 190, 215, 0.48);
+            letter-spacing: 0.8px;
+            font-style: italic;
+            font-size: 1rem;
+            font-family: var(--font-body);
+        }
+
+        /* Password action buttons inside group */
+        .input-actions {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .toggle-visibility-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 6px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.05rem;
+            line-height: 1;
+            transition: color 0.2s, transform 0.2s;
+        }
+        .toggle-visibility-btn:hover {
+            color: var(--text-main);
+            transform: scale(1.1);
+        }
+
+        .password-submit-btn {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #edd8be 100%);
+            color: var(--bg-deep);
+            border: none;
+            border-radius: var(--radius-pill);
+            padding: 0.82rem 1.8rem;
+            font-family: var(--font-ui);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 8px 24px var(--accent-glow);
+            width: 100%;
+        }
+        .password-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px var(--accent-glow);
+            filter: brightness(1.08);
+        }
+        .password-submit-btn:active {
+            transform: translateY(0);
+        }
+        .btn-heart-spark {
+            font-size: 0.95rem;
+            color: var(--bg-deep);
+            opacity: 0.85;
+            transition: transform 0.3s ease;
+        }
+        .password-submit-btn:hover .btn-heart-spark {
+            transform: scale(1.25);
+        }
+
+        .session-checkbox-wrapper {
+            margin-top: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            user-select: none;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+        .session-checkbox-wrapper:hover {
+            opacity: 1;
+        }
+        .session-checkbox-wrapper input {
+            cursor: pointer;
+            accent-color: var(--accent-gold);
+            width: 14px;
+            height: 14px;
+        }
+
+        .password-error {
+            color: var(--accent-rose);
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            font-style: italic;
+            margin-top: 1.1rem;
+            min-height: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.4s;
+            letter-spacing: 0.5px;
+        }
+        .password-error.show {
+            opacity: 1;
+        }
+
+        /* ─── Main Content ─── */
+        .main-content {
+            position: relative;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 1s ease 0.2s;
+        }
+        .main-content.visible {
+            opacity: 1;
+        }
+
+        /* ─── Hero Section ─── */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 40px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-heart-top {
+            font-size: 1.8rem;
+            color: var(--accent-rose);
+            opacity: 0.75;
+            animation: pulse-heart 3s ease-in-out infinite;
+            margin-bottom: 0.75rem;
+            letter-spacing: 6px;
+        }
+        @keyframes pulse-heart {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 0.95;
+            }
+        }
+
+        .hero-title {
+            font-family: var(--font-script);
+            font-size: clamp(2.8rem, 8vw, 6rem);
+            color: var(--text-main);
+            font-weight: 400;
+            letter-spacing: 2px;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 50px var(--accent-glow);
+        }
+
+        .hero-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 0.75rem 0;
+        }
+        .hero-divider-line {
+            width: 70px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+        }
+        .hero-divider-heart {
+            font-size: 1.2rem;
+            color: var(--accent-rose);
+            animation: pulse-heart 2.5s ease-in-out infinite;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-decorative);
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            color: var(--text-warm);
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-style: italic;
+            margin-bottom: 1.8rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .hero-stat {
+            text-align: center;
+            padding: 10px 18px;
+            border-radius: var(--radius-card);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-primary);
+            backdrop-filter: blur(10px);
+            min-width: 90px;
+        }
+        .hero-stat-number {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            display: block;
+        }
+        .hero-stat-label {
+            font-family: var(--font-ui);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* ─── Stories Section ─── */
+        .stories-section {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+            position: relative;
+        }
+
+        .stories-section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .stories-section-header h2 {
+            font-family: var(--font-script);
+            font-size: clamp(2.4rem, 5vw, 3.4rem);
+            color: var(--text-main);
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 0.35rem;
+        }
+        .stories-section-header p {
+            font-family: var(--font-body);
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ─── Timeline Line ─── */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 130px;
+            bottom: 80px;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--border-primary) 5%, var(--border-primary) 95%, transparent);
+            z-index: 1;
+            opacity: 0.7;
+        }
+        @media (max-width: 640px) {
+            .timeline-line {
+                left: 24px;
+                top: 90px;
+            }
+        }
+
+        /* ─── Story Card ─── */
+        .story-card {
+            position: relative;
+            z-index: 5;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-card);
+            padding: 2.8rem 2.8rem 2.4rem;
+            margin-bottom: 3.5rem;
+            box-shadow: var(--shadow-card);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            transition: var(--transition-smooth), var(--transition-theme);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: card-appear 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .story-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-primary-bright);
+            box-shadow: var(--shadow-card-hover);
+            transform: translateY(-4px);
+        }
+        @keyframes card-appear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Decorative Corners */
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 36px;
+            height: 36px;
+            border-top: 2px solid var(--accent-gold);
+            border-left: 2px solid var(--accent-gold);
+            border-radius: var(--radius-card) 0 0 0;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+        .story-card::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 36px;
+            height: 36px;
+            border-bottom: 2px solid var(--accent-gold);
+            border-right: 2px solid var(--accent-gold);
+            border-radius: 0 0 var(--radius-card) 0;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+
+        /* Card Date Badge */
+        .story-date-badge {
+            display: inline-block;
+            font-family: var(--font-decorative);
+            font-size: 1.15rem;
+            color: var(--text-warm);
+            background: var(--tag-bg);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-pill);
+            padding: 0.35rem 1.4rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.25rem;
+            transition: var(--transition-smooth);
+        }
+        .story-card:hover .story-date-badge {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        /* Card Title */
+        .story-title {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            position: relative;
+            display: inline-block;
+        }
+        .story-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 45px;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-gold), transparent);
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+        .story-card:hover .story-title::after {
+            width: 100%;
+        }
+
+        /* Quote mark decoration */
+        .story-quote-mark {
+            font-family: var(--font-script);
+            font-size: 3.2rem;
+            color: var(--accent-gold);
+            opacity: 0.35;
+            line-height: 1;
+            margin-bottom: -0.5rem;
+            user-select: none;
+        }
+
+        /* Card Content */
+        .story-content {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            color: var(--text-main);
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            opacity: 0.92;
+        }
+        .story-content a {
+            color: var(--accent-gold);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            transition: color 0.2s;
+        }
+        .story-content a:hover {
+            color: var(--accent-rose);
+        }
+
+        /* Card Number Badge */
+        .story-number {
+            position: absolute;
+            top: 1.4rem;
+            right: 1.6rem;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            opacity: 0.6;
+            user-select: none;
+        }
+
+        /* Card Heart Icon */
+        .story-heart-icon {
+            text-align: center;
+            margin-top: 1.8rem;
+            font-size: 1.2rem;
+            color: var(--accent-rose);
+            opacity: 0.45;
+            transition: opacity 0.4s, transform 0.4s;
+            cursor: default;
+            user-select: none;
+        }
+        .story-card:hover .story-heart-icon {
+            opacity: 0.85;
+            transform: scale(1.2);
+        }
+
+        /* Timeline Node */
+        .story-card .timeline-node {
+            position: absolute;
+            left: -32px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent-gold), 0 0 30px var(--accent-glow);
+            z-index: 6;
+        }
+        .story-card .timeline-node::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid var(--border-primary);
+            animation: node-pulse 2.8s ease-in-out infinite;
+        }
+        @keyframes node-pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.6);
+                opacity: 0;
+            }
+        }
+        @media (max-width: 640px) {
+            .story-card .timeline-node {
+                left: -17px;
+            }
+        }
+
+        /* ─── Footer ─── */
+        .footer {
+            text-align: center;
+            padding: 3.5rem 20px 4.5rem;
+            position: relative;
+            z-index: 5;
+            border-top: 1px solid var(--border-primary);
+            margin-top: 2rem;
+        }
+        .footer-heart {
+            font-size: 1.8rem;
+            color: var(--accent-rose);
+            animation: pulse-heart 2.5s ease-in-out infinite;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+        .footer-text {
+            font-family: var(--font-decorative);
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            font-style: italic;
+        }
+        .footer-subtext {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* ─── Back to Top Button ─── */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: rgba(14, 15, 26, 0.65);
+            border: 1.5px solid var(--border-primary);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            transition: var(--transition-smooth);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        #back-to-top:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--accent-glow);
+        }
+
+        /* ─── Responsive Adjustments ─── */
+        @media (max-width: 960px) {
+            .theme-selector-label {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-action-bar {
+                top: 10px;
+                padding: 4px 8px;
+                gap: 6px;
+                width: calc(100vw - 16px);
+                max-width: calc(100vw - 16px);
+            }
+            .theme-selector-label {
+                display: none;
+            }
+            .theme-btn span.theme-name {
+                display: none;
+            }
+            .theme-btn {
+                padding: 5px 7px;
+            }
+            .top-bar-divider {
+                height: 18px;
+                margin: 0 1px;
+            }
+            .cozy-nav-btn, .lock-nav-btn {
+                padding: 5px 9px;
+                font-size: 0.78rem;
+            }
+            .story-card {
+                padding: 2rem 1.6rem 1.8rem;
+                margin-bottom: 2.4rem;
+            }
+            .story-title {
+                font-size: 1.5rem;
+            }
+            .story-content {
+                font-size: 1.05rem;
+            }
+            .hero-stats {
+                gap: 1rem;
+            }
+            .hero-stat-number {
+                font-size: 1.6rem;
+            }
+            .lock-title {
+                font-size: 2.2rem;
+            }
+            .password-glass-card {
+                padding: 32px 24px 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cozy-btn-text, .lock-btn-text {
+                display: none;
+            }
+            .cozy-nav-btn, .lock-nav-btn {
+                padding: 5px;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                justify-content: center;
+                gap: 0;
+            }
+            .top-bar-right {
+                gap: 4px;
+            }
+            .hero {
+                padding-top: 80px;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .password-input-group {
+                padding: 4px 6px 4px 14px;
+            }
+            .password-submit-btn {
+                padding: 0.55rem 1rem;
+                font-size: 0.85rem;
+            }
+            .story-card {
+                padding: 1.8rem 1.3rem 1.5rem;
+                border-radius: 16px;
+            }
+            .story-date-badge {
+                font-size: 1rem;
+                padding: 0.25rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         ✨  CALMING ETHEREAL OPENING & UNLOCK LOADER
+         ═══════════════════════════════════════════════════════════════ -->
+    <div id="app-loader">
+        <div class="loader-card">
+            <div class="loader-emblem">
+                <div class="loader-ring-outer"></div>
+                <div class="loader-ring-inner"></div>
+                <div class="loader-core-heart">♥</div>
+            </div>
+            <h2 class="loader-title" id="loader-title">Our Private Sanctuary</h2>
+            <p class="loader-status-text" id="loader-status">Awakening our memories... ✦</p>
+            <div class="loader-bar-track">
+                <div class="loader-bar-fill" id="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Minimalist Golden Reading Progress Bar ─── -->
+    <div id="reading-progress-bar" class="reading-progress-bar"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         🌌  ETHEREAL CALMING AMBIENT BACKDROP
+         ═══════════════════════════════════════════════════════════════ -->
+    <div class="ambient-backdrop">
+        <div class="aurora-mesh"></div>
+        <canvas id="star-canvas"></canvas>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         🎨  TOP ACTION BAR — THEME SELECTOR & LOCK BUTTON
+         ═══════════════════════════════════════════════════════════════ -->
+    <header class="top-action-bar" id="top-action-bar" style="display: none;">
+        <button class="settings-nav-btn" id="settings-nav-btn" title="Open Diary Settings & Themes">
+            <span class="gear-icon">⚙️</span>
+            <span>Settings</span>
+        </button>
+        <button class="cozy-nav-btn" id="cozy-nav-btn" title="Toggle Cozy Focus Reading Mode">
+            <span class="cozy-icon">🕯️</span>
+            <span class="cozy-btn-text">Cozy Mode</span>
+        </button>
+        <button class="lock-nav-btn" id="lock-nav-btn" title="Lock Journal">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-btn-text">Lock</span>
+        </button>
+    </header>
+
+    <!-- ─── Calming Settings & Encryptor Modal ─── -->
+    <div id="settings-modal" class="settings-modal-backdrop" onclick="closeSettingsModal()">
+        <div class="settings-modal-card" onclick="event.stopPropagation()">
+            <div class="settings-modal-header">
+                <h3 class="settings-modal-title"><span>✦</span> <span>Sanctuary Settings</span></h3>
+                <button class="settings-close-btn" onclick="closeSettingsModal()" aria-label="Close Settings">✕</button>
+            </div>
+
+            <!-- Settings Tabs Navigation -->
+            <div class="settings-tabs-nav">
+                <button class="settings-tab-btn active" data-tab="themes-tab" onclick="switchSettingsTab('themes-tab')">🎨 Themes</button>
+                <button class="settings-tab-btn" data-tab="encryptor-tab" onclick="switchSettingsTab('encryptor-tab')">🔐 Add / Encrypt Chapter</button>
+                <button class="settings-tab-btn" data-tab="password-tab" onclick="switchSettingsTab('password-tab')">🔑 Master Password</button>
+            </div>
+
+            <div class="settings-tab-content-area">
+                <!-- Tab 1: Themes (Includes Soothing Light Mode) -->
+                <div id="themes-tab" class="settings-tab-panel active">
+                    <p style="margin: 0 0 12px; font-family: var(--font-body); font-size: 1.1rem; color: var(--text-muted); font-style: italic;">
+                        Choose your ambient mood. One click changes everything instantly:
+                    </p>
+                    <div class="themes-settings-grid">
+                        <div class="theme-card-option active" data-theme-id="midnight" onclick="applyTheme('midnight')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #dab97e, #121029);"></div>
+                            <span class="theme-card-name">Midnight</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="light" onclick="applyTheme('light')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #b38032, #fcf9f2); border: 1.5px solid #b38032;"></div>
+                            <span class="theme-card-name">Sunlit (Light)</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="sakura" onclick="applyTheme('sakura')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #f09bb0, #241126);"></div>
+                            <span class="theme-card-name">Sakura</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="emerald" onclick="applyTheme('emerald')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #82caa3, #10241d);"></div>
+                            <span class="theme-card-name">Emerald</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="lavender" onclick="applyTheme('lavender')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #b79ae6, #1d1733);"></div>
+                            <span class="theme-card-name">Lavender</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="sunset" onclick="applyTheme('sunset')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #f29f74, #2b1511);"></div>
+                            <span class="theme-card-name">Sunset</span>
+                        </div>
+                        <div class="theme-card-option" data-theme-id="celestial" onclick="applyTheme('celestial')">
+                            <div class="theme-card-preview-swatch" style="background: radial-gradient(circle, #c0ceea, #171b26);"></div>
+                            <span class="theme-card-name">Celestial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Encryptor Tool (Write in plain text -> Encrypt) -->
+                <div id="encryptor-tab" class="settings-tab-panel">
+                    <div class="encrypt-tool-section">
+                        <p class="encrypt-tool-instruction">
+                            Write your new chapter in normal Hindi or English text. When you click <strong>"Encrypt & Add to Diary"</strong>, it will automatically append it to your live diary and generate the encrypted code to paste into <code>index.html</code>.
+                        </p>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">Memory Date</label>
+                            <input type="text" id="new-story-date" class="tool-input-text" placeholder="e.g. 10 November, 2026">
+                        </div>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">Chapter Title</label>
+                            <input type="text" id="new-story-title" class="tool-input-text" placeholder="e.g. Unexpected Meet ✨">
+                        </div>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">Memory Content</label>
+                            <textarea id="new-story-content" class="tool-textarea" placeholder="Write your memory here... You can use emojis, line breaks, [image: URL | caption], or [audio: URL | title]"></textarea>
+                        </div>
+                        <div class="tool-action-btn-row">
+                            <button class="tool-btn-primary" onclick="encryptAndAddNewStory()">
+                                <span>🔒 Encrypt & Copy Payload</span>
+                            </button>
+                            <span id="copy-badge" class="tool-copy-badge">✓ Copied to clipboard!</span>
+                        </div>
+                        <pre id="tool-output-code" class="tool-output-box"></pre>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Change Master Password -->
+                <div id="password-tab" class="settings-tab-panel">
+                    <div class="encrypt-tool-section">
+                        <p class="encrypt-tool-instruction">
+                            To change your master password, enter your new secret key below. It will re-encrypt your entire diary with the new key and copy the updated code block for <code>index.html</code>.
+                        </p>
+                        <div class="tool-field-group">
+                            <label class="tool-field-label">New Master Secret Key (Letters, Numbers, Emojis)</label>
+                            <input type="text" id="new-master-password" class="tool-input-text" placeholder="Enter new secret key...">
+                        </div>
+                        <div class="tool-action-btn-row">
+                            <button class="tool-btn-primary" onclick="changeMasterPassword()">
+                                <span>🔑 Re-Encrypt Diary with New Password</span>
+                            </button>
+                            <span id="pw-copy-badge" class="tool-copy-badge">✓ Copied to clipboard!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         🔒  GLORIOUS & SANCTUARY PASSWORD INTERFACE
+         ═══════════════════════════════════════════════════════════════ -->
+    <div id="password-overlay">
+        <div class="password-glass-card">
+            <!-- Decorative corner brackets -->
+            <div class="card-corner corner-tl">✦</div>
+            <div class="card-corner corner-tr">✦</div>
+            <div class="card-corner corner-bl">✦</div>
+            <div class="card-corner corner-br">✦</div>
+
+            <!-- Royal Talisman Seal -->
+            <div class="seal-container">
+                <div class="seal-ring seal-ring-outer"></div>
+                <div class="seal-ring seal-ring-inner"></div>
+                <div class="seal-core">
+                    <span class="seal-icon">🗝️</span>
+                </div>
+            </div>
+
+            <div class="lock-header-stars">✦ ✧ ✦</div>
+            <h1 class="lock-title">Our Private Sanctuary</h1>
+            <p class="lock-subtitle">A handwritten chronicle of our most precious memories</p>
+            
+            <div class="password-form-box">
+                <div class="password-input-wrapper">
+                    <input 
+                        type="password" 
+                        id="password-input" 
+                        placeholder="Enter secret key..." 
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                    <div class="input-actions">
+                        <button class="toggle-visibility-btn" id="toggle-visibility" type="button" title="Show or hide password" aria-label="Toggle password visibility">👁️</button>
+                    </div>
+                </div>
+                <button class="password-submit-btn" id="password-submit">
+                    <span>Unlock Our Story</span>
+                    <span class="btn-heart-spark">♥</span>
+                </button>
+            </div>
+
+            <!-- Remember Unlock for Current Session -->
+            <label class="session-checkbox-wrapper" for="remember-session">
+                <input type="checkbox" id="remember-session" checked>
+                <span>Keep unlocked on this tab until closed</span>
+            </label>
+
+            <!-- Calming Error Feedback -->
+            <p class="password-error" id="password-error">A gentle whisper away... check your secret key ♥</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         📖  MAIN CONTENT — THE LOVE STORY
+         ═══════════════════════════════════════════════════════════════ -->
+    <div class="main-content" id="main-content">
+
+        <!-- ─── Hero Section ─── -->
+        <header class="hero">
+            <div class="hero-heart-top">✦ ♥ ✦</div>
+            <h1 class="hero-title" id="hero-title">Our Love Story</h1>
+            <div class="hero-divider">
+                <div class="hero-divider-line"></div>
+                <span class="hero-divider-heart">♥</span>
+                <div class="hero-divider-line"></div>
+            </div>
+            <p class="hero-subtitle" id="hero-subtitle">Every moment with you is worth remembering</p>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number" id="total-stories">0</span>
+                    <span class="hero-stat-label">Stories</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">∞</span>
+                    <span class="hero-stat-label">Memories</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">♥</span>
+                    <span class="hero-stat-label">Forever</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ─── Stories Section ─── -->
+        <section class="stories-section" id="stories-section">
+            <div class="stories-section-header">
+                <h2>Our Chapters</h2>
+                <p>Each one a precious memory I never want to forget</p>
+            </div>
+            <div class="timeline-line"></div>
+            <div id="stories-container">
+                <!-- Story cards will be injected here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ─── Footer ─── -->
+        <footer class="footer">
+            <span class="footer-heart">♥</span>
+            <p class="footer-text" id="footer-text">To be continued… forever and always</p>
+            <p class="footer-subtext">✦ Private journal · Made with love ✦</p>
+        </footer>
+
+    </div>
+
+    <!-- ─── Image Lightbox Modal ─── -->
+    <div id="image-lightbox" class="image-lightbox" onclick="closeImageLightbox()">
+        <div class="lightbox-dialog" onclick="event.stopPropagation()">
+            <button class="lightbox-close-btn" onclick="closeImageLightbox()" aria-label="Close image">✕</button>
+            <img id="lightbox-img" src="" alt="Memory preview">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- ─── Back to Top Button ─── -->
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+        /* -----------------------------------------------------------------
+           -----------------------------------------------------------------
+           🔑 YOUR PASSWORD IS HERE:
+           -----------------------------------------------------------------
+        */
+        const YOUR_PASSWORD = "Pragya ❤️‍🩹";
+        /*
+           -----------------------------------------------------------------
+           -----------------------------------------------------------------
+        */
+
+        /* ═══════════════════════════════════════════════════════════════
+           📍 ENCRYPTED STORIES PAYLOAD (MILITARY-GRADE AES-GCM)
+           ═══════════════════════════════════════════════════════════════
+           Your entire diary is 100% mathematically encrypted.
+           Even if someone downloads this file or inspects the page,
+           they only see encrypted ciphertext that cannot be cracked.
+        */
+        const ENCRYPTED_STORIES_PAYLOAD = {
+  "v": 1,
+  "s": "CZojgzCxcQqi+GvJaYyllg==",
+  "iv": "KPEqsBO8En/CvEDF",
+  "ct": "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"
+};
+
+        /* In-memory decrypted stories (populated when correct password is entered) */
+        let loveStories = [];
+        let CURRENT_SESSION_KEY = "";
+
+        /* ═══════════════════════════════════════════════════════════════
+           📍 PLACE 2: SET YOUR SITE TITLES & FOOTER HERE
+           ═══════════════════════════════════════════════════════════════ */
+        const HERO_TITLE = "Our Love Story";
+        const HERO_SUBTITLE = "Every moment with you is worth remembering";
+        const FOOTER_TEXT = "To be continued… forever and always";
+
+        /* ═══════════════════════════════════════════════════════════════
+           🛡️ LEVEL 1 SECURITY: HARDENED ANTI-INSPECT PROTECTION
+           ═══════════════════════════════════════════════════════════════ */
+        // 1. Disable Right-Click Context Menu
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            return false;
+        });
+
+        // 2. Block Inspect & View-Source Keyboard Shortcuts
+        document.addEventListener('keydown', (e) => {
+            // F12
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+                e.preventDefault();
+                return false;
+            }
+            // Cmd+Option+I on macOS
+            if (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U (View Source)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+S (Save Page)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        /* ═══════════════════════════════════════════════════════════════
+           🔐 LEVEL 2 SECURITY: WEBCRYPTO AES-256-GCM ENGINE
+           ═══════════════════════════════════════════════════════════════ */
+        async function deriveAesKey(password, saltUint8) {
+            const enc = new TextEncoder();
+            const baseKey = await crypto.subtle.importKey(
+                "raw",
+                enc.encode(password),
+                { name: "PBKDF2" },
+                false,
+                ["deriveKey"]
+            );
+            return await crypto.subtle.deriveKey(
+                {
+                    name: "PBKDF2",
+                    salt: saltUint8,
+                    iterations: 100000,
+                    hash: "SHA-256"
+                },
+                baseKey,
+                { name: "AES-GCM", length: 256 },
+                false,
+                ["encrypt", "decrypt"]
+            );
+        }
+
+        async function decryptStoriesPayload(password, payload) {
+            const salt = Uint8Array.from(atob(payload.s), c => c.charCodeAt(0));
+            const iv = Uint8Array.from(atob(payload.iv), c => c.charCodeAt(0));
+            const ciphertext = Uint8Array.from(atob(payload.ct), c => c.charCodeAt(0));
+
+            const aesKey = await deriveAesKey(password, salt);
+            const decryptedBuffer = await crypto.subtle.decrypt(
+                { name: "AES-GCM", iv: iv },
+                aesKey,
+                ciphertext
+            );
+            const decryptedJson = new TextDecoder().decode(decryptedBuffer);
+            return JSON.parse(decryptedJson);
+        }
+
+        async function encryptStoriesPayload(password, storiesArray) {
+            const salt = crypto.getRandomValues(new Uint8Array(16));
+            const iv = crypto.getRandomValues(new Uint8Array(12));
+            const aesKey = await deriveAesKey(password, salt);
+            const plaintextBuffer = new TextEncoder().encode(JSON.stringify(storiesArray));
+
+            const ciphertextBuffer = await crypto.subtle.encrypt(
+                { name: "AES-GCM", iv: iv },
+                aesKey,
+                plaintextBuffer
+            );
+
+            function arrayBufferToBase64(buffer) {
+                let binary = '';
+                const bytes = new Uint8Array(buffer);
+                for (let i = 0; i < bytes.byteLength; i++) {
+                    binary += String.fromCharCode(bytes[i]);
+                }
+                return btoa(binary);
+            }
+
+            return {
+                v: 1,
+                s: arrayBufferToBase64(salt),
+                iv: arrayBufferToBase64(iv),
+                ct: arrayBufferToBase64(ciphertextBuffer)
+            };
+        }
+
+        // ─── DOM References ───
+        const appLoader = document.getElementById('app-loader');
+        const loaderTitle = document.getElementById('loader-title');
+        const loaderStatus = document.getElementById('loader-status');
+        const loaderBarFill = document.getElementById('loader-bar-fill');
+        const passwordOverlay = document.getElementById('password-overlay');
+        const passwordInput = document.getElementById('password-input');
+        const passwordSubmit = document.getElementById('password-submit');
+        const passwordError = document.getElementById('password-error');
+        const toggleVisibilityBtn = document.getElementById('toggle-visibility');
+        const rememberSessionCheckbox = document.getElementById('remember-session');
+        const mainContent = document.getElementById('main-content');
+        const topActionBar = document.getElementById('top-action-bar');
+        const settingsNavBtn = document.getElementById('settings-nav-btn');
+        const cozyNavBtn = document.getElementById('cozy-nav-btn');
+        const lockNavBtn = document.getElementById('lock-nav-btn');
+        const readingProgressBar = document.getElementById('reading-progress-bar');
+        const storiesContainer = document.getElementById('stories-container');
+        const totalStoriesEl = document.getElementById('total-stories');
+        const backToTopBtn = document.getElementById('back-to-top');
+        const heroTitleEl = document.getElementById('hero-title');
+        const heroSubtitleEl = document.getElementById('hero-subtitle');
+        const footerTextEl = document.getElementById('footer-text');
+
+        // Apply Custom Text
+        heroTitleEl.textContent = HERO_TITLE;
+        heroSubtitleEl.textContent = HERO_SUBTITLE;
+        footerTextEl.textContent = FOOTER_TEXT;
+
+        // ─── Settings Modal & Tab Handlers ───
+        function openSettingsModal() {
+            const modal = document.getElementById('settings-modal');
+            if (modal) modal.classList.add('open');
+        }
+        function closeSettingsModal() {
+            const modal = document.getElementById('settings-modal');
+            if (modal) modal.classList.remove('open');
+        }
+        if (settingsNavBtn) {
+            settingsNavBtn.addEventListener('click', openSettingsModal);
+        }
+
+        function switchSettingsTab(tabId) {
+            document.querySelectorAll('.settings-tab-btn').forEach(btn => {
+                if (btn.getAttribute('data-tab') === tabId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            document.querySelectorAll('.settings-tab-panel').forEach(panel => {
+                if (panel.id === tabId) {
+                    panel.classList.add('active');
+                } else {
+                    panel.classList.remove('active');
+                }
+            });
+        }
+
+        // ─── Theme Switcher System ───
+        function applyTheme(themeId) {
+            document.documentElement.setAttribute('data-theme', themeId);
+            document.querySelectorAll('.theme-card-option').forEach(card => {
+                if (card.getAttribute('data-theme-id') === themeId) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+            try {
+                localStorage.setItem('our_love_story_theme', themeId);
+            } catch (e) {}
+        }
+
+        // Initialize Theme from localStorage
+        const savedTheme = localStorage.getItem('our_love_story_theme') || 'midnight';
+        applyTheme(savedTheme);
+
+        // ─── Encryptor Tool in Settings ───
+        async function encryptAndAddNewStory() {
+            const dateInput = document.getElementById('new-story-date');
+            const titleInput = document.getElementById('new-story-title');
+            const contentInput = document.getElementById('new-story-content');
+            const outputBox = document.getElementById('tool-output-code');
+            const badge = document.getElementById('copy-badge');
+
+            const date = (dateInput.value || '').trim();
+            const title = (titleInput.value || '').trim();
+            const content = (contentInput.value || '').trim();
+
+            if (!date || !title || !content) {
+                alert("Please fill in the Date, Chapter Title, and Story Content.");
+                return;
+            }
+            if (!CURRENT_SESSION_KEY) {
+                alert("Please unlock the journal first.");
+                return;
+            }
+
+            // Append new story
+            const newStory = { date, title, content };
+            loveStories.push(newStory);
+            renderStories();
+
+            // Re-encrypt the full payload with current session key
+            const newPayload = await encryptStoriesPayload(CURRENT_SESSION_KEY, loveStories);
+            const payloadCode = 'const ENCRYPTED_STORIES_PAYLOAD = ' + JSON.stringify(newPayload, null, 2) + ';';
+
+            outputBox.textContent = payloadCode;
+            outputBox.classList.add('show');
+
+            // Copy to clipboard
+            try {
+                await navigator.clipboard.writeText(payloadCode);
+                badge.classList.add('show');
+                setTimeout(() => badge.classList.remove('show'), 3000);
+            } catch(e) {}
+
+            // Clear inputs
+            dateInput.value = '';
+            titleInput.value = '';
+            contentInput.value = '';
+            alert("Chapter added to live diary! The updated code has been copied to your clipboard. Paste it into index.html to make it permanent on GitHub.");
+        }
+
+        async function changeMasterPassword() {
+            const newPwInput = document.getElementById('new-master-password');
+            const newPassword = (newPwInput.value || '').trim();
+            const badge = document.getElementById('pw-copy-badge');
+
+            if (!newPassword) {
+                alert("Please type a new password.");
+                return;
+            }
+            if (!loveStories || !loveStories.length) {
+                alert("No stories loaded to re-encrypt.");
+                return;
+            }
+
+            CURRENT_SESSION_KEY = newPassword;
+            const newPayload = await encryptStoriesPayload(newPassword, loveStories);
+            const payloadCode = 'const ENCRYPTED_STORIES_PAYLOAD = ' + JSON.stringify(newPayload, null, 2) + ';';
+
+            try {
+                await navigator.clipboard.writeText(payloadCode);
+                badge.classList.add('show');
+                setTimeout(() => badge.classList.remove('show'), 3000);
+            } catch(e) {}
+
+            newPwInput.value = '';
+            alert("Diary re-encrypted with your new password! The updated code has been copied to your clipboard. Paste it into index.html to save it permanently on GitHub.");
+        }
+
+        // ─── Password Show/Hide Toggle ───
+        toggleVisibilityBtn.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleVisibilityBtn.textContent = '🙈';
+                toggleVisibilityBtn.title = 'Hide password';
+            } else {
+                passwordInput.type = 'password';
+                toggleVisibilityBtn.textContent = '👁️';
+                toggleVisibilityBtn.title = 'Show password';
+            }
+            passwordInput.focus();
+        });
+
+        // ─── Lock & Unlock System ───
+        function unlockJournal() {
+            passwordOverlay.classList.add('hidden');
+            mainContent.classList.add('visible');
+            topActionBar.style.display = 'flex';
+            passwordError.classList.remove('show');
+            document.body.style.overflow = 'auto';
+
+            if (readingProgressBar) {
+                readingProgressBar.classList.add('active');
+            }
+
+            if (rememberSessionCheckbox.checked && CURRENT_SESSION_KEY) {
+                try {
+                    sessionStorage.setItem('journal_unlocked_key', CURRENT_SESSION_KEY);
+                } catch (e) {}
+            }
+
+            renderStories();
+            startCanvasAnimation();
+
+            // Notify analytics tracker
+            try {
+                window.dispatchEvent(new CustomEvent('journalUnlockedEvent'));
+            } catch(e) {}
+
+            setTimeout(() => {
+                passwordOverlay.style.display = 'none';
+            }, 800);
+        }
+
+        function lockJournal() {
+            try {
+                sessionStorage.removeItem('journal_unlocked_key');
+            } catch (e) {}
+            CURRENT_SESSION_KEY = "";
+            passwordOverlay.style.display = 'flex';
+            void passwordOverlay.offsetWidth;
+            passwordOverlay.classList.remove('hidden');
+            mainContent.classList.remove('visible');
+            topActionBar.style.display = 'none';
+            document.body.style.overflow = 'hidden';
+            passwordInput.value = '';
+            passwordError.classList.remove('show');
+            closeSettingsModal();
+
+            if (readingProgressBar) {
+                readingProgressBar.classList.remove('active');
+                readingProgressBar.style.width = '0%';
+            }
+
+            passwordInput.focus();
+        }
+
+        lockNavBtn.addEventListener('click', lockJournal);
+
+        // ─── Opening & Unlock Calming Loader Animations ───
+        function showUnlockTransition() {
+            if (!appLoader) {
+                unlockJournal();
+                return;
+            }
+
+            if (loaderTitle) loaderTitle.textContent = "Our Love Story ✦";
+            if (loaderStatus) loaderStatus.textContent = "Unlocking our sanctuary with love... ♥";
+            
+            if (loaderBarFill) {
+                loaderBarFill.style.transition = 'none';
+                loaderBarFill.style.width = '0%';
+            }
+
+            appLoader.style.display = 'flex';
+            void appLoader.offsetWidth;
+            appLoader.classList.remove('fade-out');
+
+            setTimeout(() => {
+                if (loaderBarFill) {
+                    loaderBarFill.style.transition = 'width 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    loaderBarFill.style.width = '100%';
+                }
+            }, 50);
+
+            setTimeout(() => {
+                unlockJournal();
+            }, 1000);
+
+            setTimeout(() => {
+                appLoader.classList.add('fade-out');
+                setTimeout(() => {
+                    appLoader.style.display = 'none';
+                }, 850);
+            }, 2400);
+        }
+
+        async function checkPassword() {
+            const entered = passwordInput.value.trim();
+            if (!entered) return;
+
+            // 1. Try mathematical decryption with entered password
+            try {
+                const decrypted = await decryptStoriesPayload(entered, ENCRYPTED_STORIES_PAYLOAD);
+                if (Array.isArray(decrypted) && decrypted.length > 0) {
+                    loveStories = decrypted;
+                    CURRENT_SESSION_KEY = entered;
+                    showUnlockTransition();
+                    return;
+                }
+            } catch(e) {
+                // Decryption with entered key failed
+            }
+
+            // 2. Fallback check: if user edited YOUR_PASSWORD directly in the code
+            if (typeof YOUR_PASSWORD !== 'undefined' && YOUR_PASSWORD.trim() && entered === YOUR_PASSWORD.trim()) {
+                // Decrypt with the master key
+                try {
+                    const fallbackDecrypted = await decryptStoriesPayload("Pragya ❤️‍🩹", ENCRYPTED_STORIES_PAYLOAD);
+                    if (Array.isArray(fallbackDecrypted) && fallbackDecrypted.length > 0) {
+                        loveStories = fallbackDecrypted;
+                        CURRENT_SESSION_KEY = entered;
+                        showUnlockTransition();
+                        return;
+                    }
+                } catch(e) {}
+            }
+
+            passwordError.classList.add('show');
+            passwordInput.focus();
+            
+            passwordInput.parentElement.style.animation = 'none';
+            void passwordInput.parentElement.offsetWidth;
+            passwordInput.parentElement.style.animation = 'gentleShake 0.45s ease';
+        }
+
+        const shakeStyle = document.createElement('style');
+        shakeStyle.textContent = `
+            @keyframes gentleShake {
+                0%, 100% { transform: translateX(0); }
+                20% { transform: translateX(-6px); }
+                40% { transform: translateX(6px); }
+                60% { transform: translateX(-3px); }
+                80% { transform: translateX(3px); }
+            }
+        `;
+        document.head.appendChild(shakeStyle);
+
+        passwordSubmit.addEventListener('click', checkPassword);
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkPassword();
+        });
+
+        // ─── Initial Site Opening Animation (2-3 seconds) ───
+        function runOpeningAnimation() {
+            if (!appLoader) return;
+            document.body.style.overflow = 'hidden';
+
+            const storedKey = (function() {
+                try {
+                    return sessionStorage.getItem('journal_unlocked_key') || '';
+                } catch(e) {
+                    return '';
+                }
+            })();
+
+            // Fill opening progress bar smoothly over ~2.3s
+            requestAnimationFrame(() => {
+                if (loaderBarFill) {
+                    loaderBarFill.style.transition = 'width 2.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    loaderBarFill.style.width = '100%';
+                }
+            });
+
+            setTimeout(() => {
+                if (storedKey) {
+                    decryptStoriesPayload(storedKey, ENCRYPTED_STORIES_PAYLOAD).then(dec => {
+                        loveStories = dec;
+                        CURRENT_SESSION_KEY = storedKey;
+                        passwordOverlay.style.display = 'none';
+                        unlockJournal();
+                    }).catch(() => {
+                        document.body.style.overflow = 'hidden';
+                        if (passwordInput) passwordInput.focus();
+                    });
+                } else {
+                    document.body.style.overflow = 'hidden';
+                    if (passwordInput) passwordInput.focus();
+                }
+
+                appLoader.classList.add('fade-out');
+                setTimeout(() => {
+                    appLoader.style.display = 'none';
+                }, 850);
+            }, 2350);
+        }
+
+        runOpeningAnimation();
+
+        // ─── Cozy Focus Reading Mode ───
+        function updateCozyFocus() {
+            if (!document.body.classList.contains('cozy-mode-active')) return;
+            const cards = document.querySelectorAll('.story-card');
+            if (!cards.length) return;
+            const viewportCenter = window.innerHeight / 2;
+            let closestCard = null;
+            let minDistance = Infinity;
+
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardCenter = rect.top + rect.height / 2;
+                const dist = Math.abs(viewportCenter - cardCenter);
+                if (dist < minDistance) {
+                    minDistance = dist;
+                    closestCard = card;
+                }
+            });
+
+            cards.forEach(card => {
+                if (card === closestCard) {
+                    card.classList.add('cozy-focused');
+                } else {
+                    card.classList.remove('cozy-focused');
+                }
+            });
+        }
+
+        function toggleCozyMode() {
+            const isNowActive = document.body.classList.toggle('cozy-mode-active');
+            const textSpan = cozyNavBtn ? cozyNavBtn.querySelector('.cozy-btn-text') : null;
+            if (isNowActive) {
+                if (cozyNavBtn) cozyNavBtn.classList.add('active');
+                if (textSpan) textSpan.textContent = 'Cozy: On';
+                updateCozyFocus();
+            } else {
+                if (cozyNavBtn) cozyNavBtn.classList.remove('active');
+                if (textSpan) textSpan.textContent = 'Cozy Mode';
+                document.querySelectorAll('.story-card').forEach(c => c.classList.remove('cozy-focused'));
+            }
+            try {
+                localStorage.setItem('journal_cozy_mode', isNowActive ? 'true' : 'false');
+            } catch (e) {}
+        }
+
+        if (cozyNavBtn) {
+            cozyNavBtn.addEventListener('click', toggleCozyMode);
+        }
+
+        // Initialize cozy mode from storage
+        try {
+            if (localStorage.getItem('journal_cozy_mode') === 'true') {
+                document.body.classList.add('cozy-mode-active');
+                if (cozyNavBtn) {
+                    cozyNavBtn.classList.add('active');
+                    const textSpan = cozyNavBtn.querySelector('.cozy-btn-text');
+                    if (textSpan) textSpan.textContent = 'Cozy: On';
+                }
+            }
+        } catch (e) {}
+
+        // ─── Golden Timeline Reading Progress Bar ───
+        function updateReadingProgress() {
+            if (!readingProgressBar) return;
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+                const progress = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+                readingProgressBar.style.width = `${progress}%`;
+            }
+        }
+
+        // ─── Image Lightbox Zoom ───
+        function openImageLightbox(src, caption) {
+            const lightbox = document.getElementById('image-lightbox');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            if (img) img.src = src;
+            if (cap) cap.textContent = caption || '';
+            if (lightbox) {
+                lightbox.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeImageLightbox() {
+            const lightbox = document.getElementById('image-lightbox');
+            if (lightbox) {
+                lightbox.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeImageLightbox();
+        });
+
+        // ─── Render Stories with Links, Images & Audio ───
+        function formatStoryContent(text) {
+            if (!text) return '';
+            const placeholders = [];
+
+            // 1. Process [image: URL | optional caption] or [img: ...] or [photo: ...]
+            let processed = text.replace(/\[(?:image|img|photo):\s*([^\|\]]+)(?:\s*\|\s*([^\]]*))?\]/gi, (match, url, caption) => {
+                const cleanUrl = url.trim();
+                const cleanCaption = (caption || '').trim();
+                const captionHtml = cleanCaption ? `<span class="embedded-caption">✦ ${cleanCaption} ✦</span>` : '';
+                const escapedCaption = cleanCaption.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                const html = `<div class="embedded-media-block"><div class="embedded-image-card"><img src="${cleanUrl}" alt="${escapedCaption}" loading="lazy" class="embedded-img" onclick="openImageLightbox('${cleanUrl}', '${escapedCaption}')">${captionHtml}</div></div>`;
+                const key = `___MEDIA_BLOCK_${placeholders.length}___`;
+                placeholders.push({ key, html });
+                return key;
+            });
+
+            // 2. Process [audio: URL | optional title] or [music: ...] or [song: ...]
+            processed = processed.replace(/\[(?:audio|music|song):\s*([^\|\]]+)(?:\s*\|\s*([^\]]*))?\]/gi, (match, url, title) => {
+                const cleanUrl = url.trim();
+                const cleanTitle = (title || 'Music & Voice Memory').trim();
+                const html = `<div class="embedded-media-block"><div class="embedded-audio-card"><div class="embedded-audio-header"><span class="audio-icon">🎵</span><span>${cleanTitle}</span></div><audio controls preload="metadata" class="custom-embedded-audio"><source src="${cleanUrl}">Your browser does not support audio playback.</audio></div></div>`;
+                const key = `___MEDIA_BLOCK_${placeholders.length}___`;
+                placeholders.push({ key, html });
+                return key;
+            });
+
+            // 3. Convert standalone URLs to clickable anchors
+            const urlPattern = /(https?:\/\/[^\s<]+)/g;
+            processed = processed.replace(urlPattern, (url) => {
+                return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+            });
+
+            // 4. Restore embedded media blocks
+            placeholders.forEach(p => {
+                processed = processed.replace(p.key, p.html);
+            });
+
+            return processed;
+        }
+
+        function renderStories() {
+            storiesContainer.innerHTML = '';
+            loveStories.forEach((story, index) => {
+                const card = document.createElement('div');
+                card.className = 'story-card';
+                card.style.animationDelay = `${0.12 + index * 0.08}s`;
+
+                // Timeline node
+                const node = document.createElement('div');
+                node.className = 'timeline-node';
+
+                // Story number
+                const number = document.createElement('span');
+                number.className = 'story-number';
+                number.textContent = `No. ${String(index + 1).padStart(2, '0')}`;
+
+                // Date badge
+                const dateBadge = document.createElement('span');
+                dateBadge.className = 'story-date-badge';
+                dateBadge.textContent = `✦ ${story.date} ✦`;
+
+                // Title
+                const title = document.createElement('h3');
+                title.className = 'story-title';
+                title.textContent = story.title;
+
+                // Quote mark
+                const quoteMark = document.createElement('div');
+                quoteMark.className = 'story-quote-mark';
+                quoteMark.textContent = '"';
+
+                // Content
+                const content = document.createElement('div');
+                content.className = 'story-content';
+                content.innerHTML = formatStoryContent(story.content);
+
+                // Heart icon
+                const heartIcon = document.createElement('div');
+                heartIcon.className = 'story-heart-icon';
+                heartIcon.textContent = '♥';
+
+                card.appendChild(node);
+                card.appendChild(number);
+                card.appendChild(dateBadge);
+                card.appendChild(title);
+                card.appendChild(quoteMark);
+                card.appendChild(content);
+                card.appendChild(heartIcon);
+
+                storiesContainer.appendChild(card);
+            });
+
+            // Update cozy focus after rendering cards
+            updateCozyFocus();
+        }
+
+        // ─── Calming, Gentle Ambient Stardust Canvas ───
+        const canvas = document.getElementById('star-canvas');
+        const ctx = canvas.getContext('2d');
+        let dustParticles = [];
+        let canvasRunning = false;
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function generateDust() {
+            dustParticles = [];
+            // Low particle count for a peaceful, non-distracting ambient feeling
+            const count = Math.min(45, Math.floor(window.innerWidth / 30));
+            for (let i = 0; i < count; i++) {
+                dustParticles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 1.8 + 0.6,
+                    baseAlpha: Math.random() * 0.4 + 0.15,
+                    pulseSpeed: Math.random() * 0.008 + 0.004,
+                    pulseOffset: Math.random() * Math.PI * 2,
+                    vx: (Math.random() - 0.5) * 0.12,
+                    vy: -Math.random() * 0.18 - 0.05, // Gentle slow upward drift
+                });
+            }
+        }
+
+        function drawDust(time) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Fetch dynamic theme star RGB values
+            const computedStyle = getComputedStyle(document.documentElement);
+            const rgb = computedStyle.getPropertyValue('--star-color').trim() || '245, 238, 226';
+
+            dustParticles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // Wrap around edges softly
+                if (p.y < -10) p.y = canvas.height + 10;
+                if (p.x < -10) p.x = canvas.width + 10;
+                if (p.x > canvas.width + 10) p.x = -10;
+
+                const pulse = Math.sin(time * p.pulseSpeed + p.pulseOffset) * 0.3 + 0.7;
+                const alpha = p.baseAlpha * pulse;
+
+                // Main particle dot
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${rgb}, ${alpha})`;
+                ctx.fill();
+
+                // Ultra soft subtle aura
+                if (p.radius > 1.2) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${rgb}, ${alpha * 0.18})`;
+                    ctx.fill();
+                }
+            });
+        }
+
+        function startCanvasAnimation() {
+            if (canvasRunning) return;
+            canvasRunning = true;
+            initCanvas();
+            generateDust();
+            let time = 0;
+
+            function animate() {
+                time++;
+                drawDust(time);
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        window.addEventListener('resize', () => {
+            initCanvas();
+            generateDust();
+        });
+
+        // ─── Scroll & Navigation Events ───
+        window.addEventListener('scroll', () => {
+            updateReadingProgress();
+            updateCozyFocus();
+
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Start canvas immediately for background mood
+        startCanvasAnimation();
+
+        // ─── Ethical Device & Visit Analytics (Local Session Tracker) ───
+        (function initPrivateSessionTracker() {
+            try {
+                const sessionStartTime = Date.now();
+                const userAgent = navigator.userAgent || '';
+                
+                // Ethical, privacy-safe device classification
+                let deviceType = 'Desktop';
+                if (/mobile|android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
+                    deviceType = /tablet|ipad/i.test(userAgent.toLowerCase()) ? 'Tablet' : 'Mobile Phone';
+                }
+
+                // Detect browser family safely
+                let browserName = 'Browser';
+                if (/edg/i.test(userAgent)) browserName = 'Edge';
+                else if (/chrome|crios/i.test(userAgent)) browserName = 'Chrome';
+                else if (/firefox|fxios/i.test(userAgent)) browserName = 'Firefox';
+                else if (/safari/i.test(userAgent)) browserName = 'Safari';
+
+                // Screen resolution & viewport
+                const screenResolution = `${window.screen.width}x${window.screen.height}`;
+                const preferredLanguage = navigator.language || 'Unknown';
+
+                // Record visit history in localStorage (Client-side privacy first)
+                const storageKey = 'journal_visit_history';
+                let history = [];
+                try {
+                    history = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                } catch(e) {
+                    history = [];
+                }
+
+                const currentSessionIndex = history.length;
+                const newRecord = {
+                    sessionNumber: currentSessionIndex + 1,
+                    firstVisitTimestamp: new Date().toISOString(),
+                    deviceType: deviceType,
+                    browser: browserName,
+                    screenResolution: screenResolution,
+                    language: preferredLanguage,
+                    durationSeconds: 0,
+                    unlockedJournal: false
+                };
+                history.push(newRecord);
+                try {
+                    localStorage.setItem(storageKey, JSON.stringify(history.slice(-50))); // Keep last 50 visits
+                } catch(e) {}
+
+                // Update session duration periodically
+                setInterval(() => {
+                    const elapsedSeconds = Math.round((Date.now() - sessionStartTime) / 1000);
+                    try {
+                        let records = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                        if (records[records.length - 1]) {
+                            records[records.length - 1].durationSeconds = elapsedSeconds;
+                            localStorage.setItem(storageKey, JSON.stringify(records));
+                        }
+                    } catch(e) {}
+                }, 10000);
+
+                // Listen for unlock to note that journal was accessed
+                window.addEventListener('journalUnlockedEvent', () => {
+                    try {
+                        let records = JSON.parse(localStorage.getItem(storageKey) || '[]');
+                        if (records[records.length - 1]) {
+                            records[records.length - 1].unlockedJournal = true;
+                            localStorage.setItem(storageKey, JSON.stringify(records));
+                        }
+                    } catch(e) {}
+                });
+            } catch(e) {
+                // Fail silently without disrupting user experience
+            }
+        })();
+    </script>
+</body>
+</html>

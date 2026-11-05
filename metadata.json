@@ -1,0 +1,7 @@
+{
+  "name": "Our Love Story ✦ A Private Journal",
+  "description": "A private romantic journal and love story memory timeline.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
