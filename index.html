@@ -2157,16 +2157,6 @@
     <button id="back-to-top" aria-label="Back to top">↑</button>
 
     <script>
-        /* -----------------------------------------------------------------
-           -----------------------------------------------------------------
-           🔑 YOUR PASSWORD IS HERE:
-           -----------------------------------------------------------------
-        */
-        const YOUR_PASSWORD = "PrakharPragya";
-        /*
-           -----------------------------------------------------------------
-           -----------------------------------------------------------------
-        */
 
         /* ═══════════════════════════════════════════════════════════════
            📍 ENCRYPTED STORIES PAYLOAD (MILITARY-GRADE AES-GCM)
@@ -2566,7 +2556,7 @@
             const entered = passwordInput.value.trim();
             if (!entered) return;
 
-            // 1. Try mathematical decryption with entered password
+            // Pure mathematical decryption: Only the valid password can decrypt the AES-GCM ciphertext
             try {
                 const decrypted = await decryptStoriesPayload(entered, ENCRYPTED_STORIES_PAYLOAD);
                 if (Array.isArray(decrypted) && decrypted.length > 0) {
@@ -2576,21 +2566,7 @@
                     return;
                 }
             } catch(e) {
-                // Decryption with entered key failed
-            }
-
-            // 2. Fallback check: if user edited YOUR_PASSWORD directly in the code
-            if (typeof YOUR_PASSWORD !== 'undefined' && YOUR_PASSWORD.trim() && entered === YOUR_PASSWORD.trim()) {
-                // Decrypt with the master key
-                try {
-                    const fallbackDecrypted = await decryptStoriesPayload("Pragya ❤️‍🩹", ENCRYPTED_STORIES_PAYLOAD);
-                    if (Array.isArray(fallbackDecrypted) && fallbackDecrypted.length > 0) {
-                        loveStories = fallbackDecrypted;
-                        CURRENT_SESSION_KEY = entered;
-                        showUnlockTransition();
-                        return;
-                    }
-                } catch(e) {}
+                // Decryption failed: wrong password or tampered ciphertext
             }
 
             passwordError.classList.add('show');
